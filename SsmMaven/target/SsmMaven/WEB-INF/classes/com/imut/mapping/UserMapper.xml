@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.imut.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.imut.model.User" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="createdatetime" property="createdatetime" jdbcType="DATE" />
+    <result column="modifyfatetime" property="modifyfatetime" jdbcType="DATE" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="DATE" />
+    <result column="updateTime" property="updatetime" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, createdatetime, modifyfatetime, name, pwd, createTime, updateTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from user
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.imut.model.User" >
+    insert into user (id, createdatetime, modifyfatetime, 
+      name, pwd, createTime, 
+      updateTime)
+    values (#{id,jdbcType=VARCHAR}, #{createdatetime,jdbcType=DATE}, #{modifyfatetime,jdbcType=DATE}, 
+      #{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
+      #{updatetime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.imut.model.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="createdatetime != null" >
+        createdatetime,
+      </if>
+      <if test="modifyfatetime != null" >
+        modifyfatetime,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="pwd != null" >
+        pwd,
+      </if>
+      <if test="createtime != null" >
+        createTime,
+      </if>
+      <if test="updatetime != null" >
+        updateTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="createdatetime != null" >
+        #{createdatetime,jdbcType=DATE},
+      </if>
+      <if test="modifyfatetime != null" >
+        #{modifyfatetime,jdbcType=DATE},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.imut.model.User" >
+    update user
+    <set >
+      <if test="createdatetime != null" >
+        createdatetime = #{createdatetime,jdbcType=DATE},
+      </if>
+      <if test="modifyfatetime != null" >
+        modifyfatetime = #{modifyfatetime,jdbcType=DATE},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        pwd = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=DATE},
+      </if>
+      <if test="updatetime != null" >
+        updateTime = #{updatetime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.imut.model.User" >
+    update user
+    set createdatetime = #{createdatetime,jdbcType=DATE},
+      modifyfatetime = #{modifyfatetime,jdbcType=DATE},
+      name = #{name,jdbcType=VARCHAR},
+      pwd = #{pwd,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=DATE},
+      updateTime = #{updatetime,jdbcType=DATE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
