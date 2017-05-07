@@ -3,6 +3,7 @@ package com.imut.dao;
 import com.imut.model.UserRole;
 
 public interface UserRoleMapper {
+	
     int deleteByPrimaryKey(String id);
 
     int insert(UserRole record);

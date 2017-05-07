@@ -1,5 +1,7 @@
 package com.imut.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +28,16 @@ public class UserServiceImpl implements IUserService {
 		User user = userMapper.selectByPrimaryKey(id);
 		return user;
 	}
-
+	@Override
+	public List<User> getAllUser() {
+		return userMapper.getAllUser();
+	}
+	@Override
+	public List<User> getAll() {
+		return userMapper.getAll();
+	}
+	@Override
+	public List<User> getAll3() {
+		return userMapper.getAll3();
+	}
 }

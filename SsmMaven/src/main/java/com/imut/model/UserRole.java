@@ -1,6 +1,8 @@
 package com.imut.model;
 
 public class UserRole {
+	private Role role;
+	
     private String id;
 
     private String roleid;
@@ -30,4 +32,13 @@ public class UserRole {
     public void setUserid(String userid) {
         this.userid = userid == null ? null : userid.trim();
     }
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+    
 }

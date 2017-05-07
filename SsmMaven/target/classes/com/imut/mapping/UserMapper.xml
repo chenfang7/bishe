@@ -114,4 +114,62 @@
       updateTime = #{updatetime,jdbcType=DATE}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectUserRole" parameterType="java.lang.String" resultType="com.imut.model.UserRole">
+  	select * from userrole where userrole.id=#{id,jdbcType=VARCHAR}
+  </select>
+  <resultMap type="com.imut.model.User" id="userResultMap" extends="BaseResultMap">
+  	<collection property="userrole" column="id" javaType="list" select="selectUserRole"></collection>
+  </resultMap>
+  
+  <select id="getAllUser" resultMap="userResultMap">
+  	select id , createdatetime ,name ,pwd from user
+  </select>
+  
+  
+  <resultMap id="userResult2" type="com.imut.model.User" extends="BaseResultMap">
+  	<collection property="userrole" javaType="list" ofType="com.imut.model.UserRole">
+  		<id property="id" column="urole_id"/>
+  		<result property="roleid" column="urole_roleid"/>
+  		<result property="userid" column="urole_userid"/>
+  	</collection>
+  </resultMap>
+  
+  <select id="getAll" resultMap="userResult2">
+  	select 
+	  	user.id , 
+	  	user.createdatetime ,
+	  	user.name ,
+	  	user.pwd ,
+	  	userrole.id urole_id,
+	  	userrole.roleId urole_roleid,
+	  	userrole.userId  urole_userid
+  	 from user,userrole
+  	 where user.id = userrole.id
+  </select>
+  
+  <resultMap id="userResult3" type="com.imut.model.User" extends="BaseResultMap">
+  		<collection property="userrole" javaType="list" ofType="com.imut.model.UserRole">
+	  		<id property="id" column="urole_id"/>
+	  		<result property="roleid" column="urole_roleid"/>
+	  		<result property="userid" column="urole_userid"/>
+	  		<association property="role" javaType="com.imut.model.Role">
+		  		<id property="id" column="role_id"></id>
+		  		<result property="text" column="role_text"/>
+		  	</association>
+	  	</collection>
+  </resultMap>
+  <select id="getAll3" resultMap="userResult3">
+  	select 
+	  	user.id , 
+	  	user.createdatetime ,
+	  	user.name ,
+	  	user.pwd ,
+	  	userrole.id urole_id,
+	  	userrole.roleId urole_roleid,
+	  	userrole.userId  urole_userid,
+	  	role.id role_id,
+	  	role.text role_text
+  	 from user,userrole,role
+  	 where user.id = userrole.id = role.id
+  </select>
 </mapper>

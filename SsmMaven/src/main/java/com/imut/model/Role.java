@@ -1,6 +1,7 @@
 package com.imut.model;
 
 public class Role {
+	
     private String id;
 
     private String text;

@@ -1,8 +1,11 @@
 package com.imut.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class User {
+	private List<UserRole> userrole;
+	
     private String id;
 
     private Date createdatetime;
@@ -72,4 +75,13 @@ public class User {
     public void setUpdatetime(Date updatetime) {
         this.updatetime = updatetime;
     }
+
+	public List<UserRole> getUserrole() {
+		return userrole;
+	}
+
+	public void setUserrole(List<UserRole> userrole) {
+		this.userrole = userrole;
+	}
+    
 }
