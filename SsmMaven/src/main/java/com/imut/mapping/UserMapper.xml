@@ -10,15 +10,40 @@
     <result column="createTime" property="createtime" jdbcType="DATE" />
     <result column="updateTime" property="updatetime" jdbcType="DATE" />
   </resultMap>
+  
+  
+  
+  
   <sql id="Base_Column_List" >
     id, createdatetime, modifyfatetime, name, pwd, createTime, updateTime
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from user
-    where id = #{id,jdbcType=VARCHAR}
+  
+  
+  <resultMap type="com.imut.model.User" id="userAndQuestion">
+  	<id property="uid" column="uid"/>
+  	<result property="uname" column="uname" />
+  	<result property="sex" column="sex"/>
+  	<result property="phone" column="phone"/>
+  	<result property="head" column="head"/>
+  	<result property="qq" column="qq"/>
+  	<collection property="qlist" ofType="com.imut.model.Questionnaire">
+  		<id property="qid" column="qid"/>
+  		<result property="qname" column="qname"/>
+  		<result property="qstartdate" />
+  		<result property="qstartdate"  /> 
+  	</collection>
+  	
+  </resultMap>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="userAndQuestion" >
+    select a.uid as uid ,a.uname as uname,a.sex as sex,a.phone as phone,a.head as head,a.qq as qq,
+    b.qid,b.qname,b.qstartDate,b.qendDate
+    from user a,questionnaire b
+    where a.uid = #{id} AND a.uid=b.quid
   </select>
+  
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from user
     where id = #{id,jdbcType=VARCHAR}

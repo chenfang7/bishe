@@ -1,87 +1,91 @@
 package com.imut.model;
 
-import java.util.Date;
 import java.util.List;
 
 public class User {
-	private List<UserRole> userrole;
-	
-    private String id;
+    private Integer uid;
 
-    private Date createdatetime;
+    private String uname;
 
-    private Date modifyfatetime;
+    private String upassword;
 
-    private String name;
+    private Integer sex;
 
-    private String pwd;
+    private String phone;
 
-    private Date createtime;
+    private String head;
 
-    private Date updatetime;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
-    }
-
-    public Date getCreatedatetime() {
-        return createdatetime;
-    }
-
-    public void setCreatedatetime(Date createdatetime) {
-        this.createdatetime = createdatetime;
-    }
-
-    public Date getModifyfatetime() {
-        return modifyfatetime;
-    }
-
-    public void setModifyfatetime(Date modifyfatetime) {
-        this.modifyfatetime = modifyfatetime;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd == null ? null : pwd.trim();
-    }
-
-    public Date getCreatetime() {
-        return createtime;
-    }
-
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
-    }
-
-    public Date getUpdatetime() {
-        return updatetime;
-    }
-
-    public void setUpdatetime(Date updatetime) {
-        this.updatetime = updatetime;
-    }
-
-	public List<UserRole> getUserrole() {
-		return userrole;
-	}
-
-	public void setUserrole(List<UserRole> userrole) {
-		this.userrole = userrole;
-	}
+    private String qq;
     
+    private List<Questionnaire> qlist;
+
+    public List<Questionnaire> getQlist() {
+		return qlist;
+	}
+
+	public void setQlist(List<Questionnaire> qlist) {
+		this.qlist = qlist;
+	}
+
+	public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
+
+    public String getUname() {
+        return uname;
+    }
+
+    public void setUname(String uname) {
+        this.uname = uname == null ? null : uname.trim();
+    }
+
+    public String getUpassword() {
+        return upassword;
+    }
+
+    public void setUpassword(String upassword) {
+        this.upassword = upassword == null ? null : upassword.trim();
+    }
+
+    public Integer getSex() {
+        return sex;
+    }
+
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    @Override
+	public String toString() {
+		return "User [uid=" + uid + ", uname=" + uname + ", upassword=" + upassword + ", sex=" + sex + ", phone="
+				+ phone + ", head=" + head + ", qq=" + qq + ", qlist=" + qlist + "]"+qlist.get(0).toString();
+	}
+
+	public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
+    public String getHead() {
+        return head;
+    }
+
+    public void setHead(String head) {
+        this.head = head == null ? null : head.trim();
+    }
+
+    public String getQq() {
+        return qq;
+    }
+
+    public void setQq(String qq) {
+        this.qq = qq == null ? null : qq.trim();
+    }
 }

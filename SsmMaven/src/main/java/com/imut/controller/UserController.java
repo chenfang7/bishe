@@ -29,4 +29,12 @@ public class UserController {
 		request.setAttribute("user", user);
 		return "showUser";
 	}
+	
+	@RequestMapping("/ziang")
+	public String ziang(String id,HttpServletRequest request){
+		//User user = userService.getUserById(id);
+		User user =new User();
+		request.setAttribute("user", user);
+		return "ziang";
+	}
 }

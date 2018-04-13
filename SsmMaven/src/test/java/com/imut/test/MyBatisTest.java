@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.alibaba.fastjson.JSON;
 import com.imut.model.User;
 import com.imut.service.IUserService;
+import com.imut.service.MyQuestionnaireService;
 
 
 
@@ -22,22 +23,17 @@ import com.imut.service.IUserService;
 @ContextConfiguration(locations = { "classpath:spring.xml", "classpath:spring-mybatis.xml" })
 public class MyBatisTest {
 	private static Logger logger = Logger.getLogger(MyBatisTest.class); 
-	private IUserService userService;
-	
-	public IUserService getUserService() {
-		return userService;
-	}
 	@Autowired
-	public void setUserService(IUserService userService) {
-		this.userService = userService;
-	}
+	private MyQuestionnaireService q;
+	
+
 	@Test
 	public void getUserById(){
-		User user = userService.getUserById("1");
-		logger.info(JSON.toJSONStringWithDateFormat(user, "yyyy-MM-dd HH:mm:ss"));
+		User user = q.getUserById("1");
+		System.out.println(user.toString());
 	}
 	
-	@Test
+	/*@Test
 	public void test2(){
 		List<User> list = userService.getAllUser();
 		logger.info(JSON.toJSONStringWithDateFormat(list, "yyyy-MM-dd HH:mm:ss"));
@@ -53,5 +49,5 @@ public class MyBatisTest {
 	public void getAll3(){
 		List<User> list = userService.getAll3();
 		logger.info(JSON.toJSONStringWithDateFormat(list, "yyyy-MM-dd HH:mm:ss"));
-	}
+	}*/
 }

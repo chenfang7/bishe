@@ -8,6 +8,21 @@
 	<name>SsmMaven Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
+	<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<scope>compile</scope>
+		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -114,18 +129,18 @@
 				<artifactId>maven-war-plugin</artifactId>
 			</plugin>
 			<!-- tomcat7热部署 -->
-			<plugin>  
-                <groupId>org.apache.tomcat.maven</groupId>  
-                <artifactId>tomcat7-maven-plugin</artifactId>  
-                <version>2.1</version>  
-                <configuration>  
-                    <port>8080</port>  
-                    <path>/</path>  
-                    <uriEncoding>UTF-8</uriEncoding>  
-                    <finalName>my-proxy</finalName>  
-                    <server>tomcat7</server>  
-                </configuration>  
-            </plugin>  
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<port>8080</port>
+					<path>/</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<finalName>my-proxy</finalName>
+					<server>tomcat7</server>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
