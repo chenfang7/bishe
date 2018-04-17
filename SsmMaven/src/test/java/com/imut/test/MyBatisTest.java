@@ -3,6 +3,7 @@ package com.imut.test;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -12,10 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.alibaba.fastjson.JSON;
+import com.imut.dao.QuestionnaireMapper;
+import com.imut.model.Question;
 import com.imut.model.User;
-import com.imut.service.IUserService;
 import com.imut.service.MyQuestionnaireService;
+
+import net.sf.json.JSONArray;
 
 
 
@@ -23,16 +26,28 @@ import com.imut.service.MyQuestionnaireService;
 @ContextConfiguration(locations = { "classpath:spring.xml", "classpath:spring-mybatis.xml" })
 public class MyBatisTest {
 	private static Logger logger = Logger.getLogger(MyBatisTest.class); 
-	@Autowired
-	private MyQuestionnaireService q;
-	
 
-	@Test
+	@Autowired
+	private MyQuestionnaireService mqs;
+	@Autowired
+	private QuestionnaireMapper questionnaireMapper;
+	/*@Test
 	public void getUserById(){
 		User user = q.getUserById("1");
 		System.out.println(user.toString());
-	}
+	}*/
 	
+	@Test
+	public void test(){
+		List<Question> list =new ArrayList<Question>();
+		list.add(new Question(1, 2, "问题1", 1, "[\"我是傻逼么？\"]"));
+		list.add(new Question(1, 2, "问题1", 1, "[\"我是傻逼么？\"]"));
+		list.add(new Question(1, 2, "w问题1部I", 1, "[\"我是傻逼么？\"]"));
+		list.add(new Question(1, 2, "wo问题1部I", 1, "[\"我是傻逼么？\"]"));
+		list.add(new Question(1, 2, "wo阿h问题1部I", 1, "[\"我是傻逼么？\"]"));
+		questionnaireMapper.copyQuestion(list);
+	
+	}
 	/*@Test
 	public void test2(){
 		List<User> list = userService.getAllUser();

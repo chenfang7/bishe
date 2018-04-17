@@ -13,6 +13,12 @@ public class Questionnaire {
 
     private Date qenddate;
 
+    private Integer status;
+
+    private Integer sum;
+
+    private Integer release;
+
     public Integer getQid() {
         return qid;
     }
@@ -53,10 +59,27 @@ public class Questionnaire {
         this.qenddate = qenddate;
     }
 
-	@Override
-	public String toString() {
-		return "Questionnaire [qid=" + qid + ", qname=" + qname + ", quid=" + quid + ", qstartdate=" + qstartdate
-				+ ", qenddate=" + qenddate + "]";
-	}
-    
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public Integer getSum() {
+        return sum;
+    }
+
+    public void setSum(Integer sum) {
+        this.sum = sum;
+    }
+
+    public Integer getRelease() {
+        return release;
+    }
+
+    public void setRelease(Integer release) {
+        this.release = release;
+    }
 }

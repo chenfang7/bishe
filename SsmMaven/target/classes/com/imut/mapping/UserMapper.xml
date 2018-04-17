@@ -28,6 +28,7 @@
   	<result property="qq" column="qq"/>
   	<collection property="qlist" ofType="com.imut.model.Questionnaire">
   		<id property="qid" column="qid"/>
+  		<result property="quid" column="uid" />
   		<result property="qname" column="qname"/>
   		<result property="qstartdate" />
   		<result property="qstartdate"  /> 
@@ -40,161 +41,9 @@
     select a.uid as uid ,a.uname as uname,a.sex as sex,a.phone as phone,a.head as head,a.qq as qq,
     b.qid,b.qname,b.qstartDate,b.qendDate
     from user a,questionnaire b
-    where a.uid = #{id} AND a.uid=b.quid
+    where a.uid = #{id} AND a.uid=b.quid and status=1
   </select>
   
   
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
-    delete from user
-    where id = #{id,jdbcType=VARCHAR}
-  </delete>
-  <insert id="insert" parameterType="com.imut.model.User" >
-    insert into user (id, createdatetime, modifyfatetime, 
-      name, pwd, createTime, 
-      updateTime)
-    values (#{id,jdbcType=VARCHAR}, #{createdatetime,jdbcType=DATE}, #{modifyfatetime,jdbcType=DATE}, 
-      #{name,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}, 
-      #{updatetime,jdbcType=DATE})
-  </insert>
-  <insert id="insertSelective" parameterType="com.imut.model.User" >
-    insert into user
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="createdatetime != null" >
-        createdatetime,
-      </if>
-      <if test="modifyfatetime != null" >
-        modifyfatetime,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="pwd != null" >
-        pwd,
-      </if>
-      <if test="createtime != null" >
-        createTime,
-      </if>
-      <if test="updatetime != null" >
-        updateTime,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=VARCHAR},
-      </if>
-      <if test="createdatetime != null" >
-        #{createdatetime,jdbcType=DATE},
-      </if>
-      <if test="modifyfatetime != null" >
-        #{modifyfatetime,jdbcType=DATE},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="pwd != null" >
-        #{pwd,jdbcType=VARCHAR},
-      </if>
-      <if test="createtime != null" >
-        #{createtime,jdbcType=DATE},
-      </if>
-      <if test="updatetime != null" >
-        #{updatetime,jdbcType=DATE},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.imut.model.User" >
-    update user
-    <set >
-      <if test="createdatetime != null" >
-        createdatetime = #{createdatetime,jdbcType=DATE},
-      </if>
-      <if test="modifyfatetime != null" >
-        modifyfatetime = #{modifyfatetime,jdbcType=DATE},
-      </if>
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="pwd != null" >
-        pwd = #{pwd,jdbcType=VARCHAR},
-      </if>
-      <if test="createtime != null" >
-        createTime = #{createtime,jdbcType=DATE},
-      </if>
-      <if test="updatetime != null" >
-        updateTime = #{updatetime,jdbcType=DATE},
-      </if>
-    </set>
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.imut.model.User" >
-    update user
-    set createdatetime = #{createdatetime,jdbcType=DATE},
-      modifyfatetime = #{modifyfatetime,jdbcType=DATE},
-      name = #{name,jdbcType=VARCHAR},
-      pwd = #{pwd,jdbcType=VARCHAR},
-      createTime = #{createtime,jdbcType=DATE},
-      updateTime = #{updatetime,jdbcType=DATE}
-    where id = #{id,jdbcType=VARCHAR}
-  </update>
-  <select id="selectUserRole" parameterType="java.lang.String" resultType="com.imut.model.UserRole">
-  	select * from userrole where userrole.id=#{id,jdbcType=VARCHAR}
-  </select>
-  <resultMap type="com.imut.model.User" id="userResultMap" extends="BaseResultMap">
-  	<collection property="userrole" column="id" javaType="list" select="selectUserRole"></collection>
-  </resultMap>
-  
-  <select id="getAllUser" resultMap="userResultMap">
-  	select id , createdatetime ,name ,pwd from user
-  </select>
-  
-  
-  <resultMap id="userResult2" type="com.imut.model.User" extends="BaseResultMap">
-  	<collection property="userrole" javaType="list" ofType="com.imut.model.UserRole">
-  		<id property="id" column="urole_id"/>
-  		<result property="roleid" column="urole_roleid"/>
-  		<result property="userid" column="urole_userid"/>
-  	</collection>
-  </resultMap>
-  
-  <select id="getAll" resultMap="userResult2">
-  	select 
-	  	user.id , 
-	  	user.createdatetime ,
-	  	user.name ,
-	  	user.pwd ,
-	  	userrole.id urole_id,
-	  	userrole.roleId urole_roleid,
-	  	userrole.userId  urole_userid
-  	 from user,userrole
-  	 where user.id = userrole.id
-  </select>
-  
-  <resultMap id="userResult3" type="com.imut.model.User" extends="BaseResultMap">
-  		<collection property="userrole" javaType="list" ofType="com.imut.model.UserRole">
-	  		<id property="id" column="urole_id"/>
-	  		<result property="roleid" column="urole_roleid"/>
-	  		<result property="userid" column="urole_userid"/>
-	  		<association property="role" javaType="com.imut.model.Role">
-		  		<id property="id" column="role_id"></id>
-		  		<result property="text" column="role_text"/>
-		  	</association>
-	  	</collection>
-  </resultMap>
-  <select id="getAll3" resultMap="userResult3">
-  	select 
-	  	user.id , 
-	  	user.createdatetime ,
-	  	user.name ,
-	  	user.pwd ,
-	  	userrole.id urole_id,
-	  	userrole.roleId urole_roleid,
-	  	userrole.userId  urole_userid,
-	  	role.id role_id,
-	  	role.text role_text
-  	 from user,userrole,role
-  	 where user.id = userrole.id = role.id
-  </select>
+
 </mapper>

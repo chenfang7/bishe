@@ -19,7 +19,23 @@ public class User {
     
     private List<Questionnaire> qlist;
 
-    public List<Questionnaire> getQlist() {
+    public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(Integer uid, String uname, String upassword, Integer sex, String phone, String head, String qq) {
+		super();
+		this.uid = uid;
+		this.uname = uname;
+		this.upassword = upassword;
+		this.sex = sex;
+		this.phone = phone;
+		this.head = head;
+		this.qq = qq;
+	}
+
+	public List<Questionnaire> getQlist() {
 		return qlist;
 	}
 
