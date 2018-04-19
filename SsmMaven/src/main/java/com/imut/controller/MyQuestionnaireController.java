@@ -106,4 +106,22 @@ public class MyQuestionnaireController {
 		mqs.copyQuestionnaire(questionnaire);
 		return "redirect:list?id=" + user.getUid();
 	}
+	/**
+	 *  创建问卷
+	 * @param name
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value = "/create")
+	public ModelAndView createquestionnaire(String name, HttpServletRequest request) {
+		User user = (User) request.getSession().getAttribute("user");
+		Questionnaire q =new Questionnaire();
+		q.setQname(name);
+		q.setQuid(user.getUid());
+		int createquestionnaire = mqs.createquestionnaire(q);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("qqq",q );
+		mav.setViewName("editquestionnaire");
+		return mav;
+	}
 }

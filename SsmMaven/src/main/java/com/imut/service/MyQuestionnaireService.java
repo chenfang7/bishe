@@ -19,4 +19,6 @@ public interface MyQuestionnaireService {
 	public void copyQuestionnaire(Questionnaire qnaire);
 
 	public Questionnaire getQuestionnaireByid(String qid);
+
+	public int createquestionnaire(Questionnaire q);
 }

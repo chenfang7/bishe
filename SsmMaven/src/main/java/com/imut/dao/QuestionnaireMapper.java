@@ -23,4 +23,6 @@ public interface QuestionnaireMapper {
 
 	void copyQuestion(List<Question> questions);
 
+	int createquestionnaire(Questionnaire q);
+
 }

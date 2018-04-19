@@ -1,6 +1,7 @@
 package com.imut.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Questionnaire {
     private Integer qid;
@@ -19,7 +20,17 @@ public class Questionnaire {
 
     private Integer release;
 
-    public Integer getQid() {
+    private List<Question> questions;
+    
+    public List<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
+
+	public Integer getQid() {
         return qid;
     }
 

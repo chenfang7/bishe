@@ -60,4 +60,9 @@
 			)
 		</foreach>
 	</insert>
+	
+	<insert id="createquestionnaire" useGeneratedKeys="true"
+		keyProperty="qid">
+		INSERT INTO `question`.`questionnaire` ( `qname`, `quid`) VALUES ( #{qname}, #{quid});
+		</insert>
 </mapper>

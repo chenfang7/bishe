@@ -78,4 +78,12 @@ public class MyQuestionnaireServiceImpl implements MyQuestionnaireService {
 		return questionnaireMapper.getQuestionnaireByid(qid);
 	}
 
+	@Override
+	public int createquestionnaire(Questionnaire q) {
+		
+		return questionnaireMapper.createquestionnaire(q);
+	}
+
+	
+
 }
