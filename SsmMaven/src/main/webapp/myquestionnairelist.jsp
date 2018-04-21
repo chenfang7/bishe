@@ -172,66 +172,22 @@
 											<div class='process-box pull-left'>
 												<dl class='process-1 pull-left'>
 													<dd class='spinner-list'>
-														<a href='/wjx/design/designstart.aspx?activity=21275213'><i
-															class='icon design-icon'></i>设计问卷<span class='caret'></span></a>
-														<ul>
-															<span class='caret-inverted'></span>
-															<li><a
-																href='/wjx/design/designstart.aspx?activity=21275213'
-																title='设计向导'>设计向导</a></li>
-															<li><a
-																href='/newwjx/design/editquestionnaire.aspx?activity=21275213'
-																title='编辑问卷'>编辑问卷</a></li>
-															<li><a
-																href='/wjx/design/questionnairesettings.aspx?activity=21275213'
-																title='问卷设置'>问卷设置</a></li>
-															<li><a
-																href='/newwjx/join/jqnew.aspx?q=21275213&wg=1&t=636583861167775937'
-																title='问卷外观'>问卷外观</a></li>
-															<li><a
-																href='/wjx/design/sethbaward.aspx?activity=21275213'>红包&奖品</a></li>
-														</ul>
+														<a href='/editqe?qid=${q.qid}'><i
+															class='icon design-icon'></i>编辑问卷</a>
 													</dd>
 												</dl>
 												<dl class='process-2 pull-left'>
 													<dd class='spinner-list'>
 														<a href='/newwjx/design/sendqstart.aspx?activity=21275213'><i
-															class='icon recovery-icon'></i>发送问卷<span class='caret'></span></a>
-														<ul>
-															<span class='caret-inverted'></span>
-															<li><a
-																href='/newwjx/design/sendqstart.aspx?activity=21275213'
-																title='通过QQ、MSN、Email发送给受访者'>链接&二维码</a></li>
-															<li><a
-																href='/wjx/promote/sendweixin.aspx?activityid=21275213'
-																title='微信发送'>微信发送</a></li>
-															<li><a
-																href='/sample/demand.aspx?activityid=21275213&lst=1&npub=1'
-																title='帮您以最低成本采集到需要的数据'>样本服务</a></li>
-															<li><a
-																href='/wjx/promote/joinbacklist.aspx?activityid=21275213'
-																title='填写其他用户的问卷，并邀请他们回填'>互填问卷</a></li>
-															<li><a
-																href='/wjx/promote/promoteapply.aspx?activityid=21275213'
-																title='通过设置积分奖励来回收1000份以内的答卷'>申请推荐</a></li>
-														</ul>
+															class='icon recovery-icon'></i>链接&二维码</a>
+														
 													</dd>
 												</dl>
 												<dl class='process-3 pull-left'>
 													<dd class='spinner-list'>
 														<a href='/report/21275213.aspx' title='答卷统计分析'><i
-															class='icon download-icon'></i>分析&下载<span class='caret'></span></a>
-														<ul>
-															<span class='caret-inverted'></span>
-															<li><a href='/report/21275213.aspx'
-																title='查看包含统计分析数据的报告，并可以下载到WORD、PDF '>统计&分析</a></li>
-															<li><a
-																href='/wjx/activitystat/viewstatsummary.aspx?activity=21275213'
-																title='以Excel、CSV格式下载答卷数据（可以导入到SPSS分析'>查看下载答卷</a></li>
-															<li><a
-																href='/wjx/activitystat/viewurl.aspx?activity=21275213'
-																title='包括来源渠道分析，时间段分析以及地理位置分析'>来源分析</a></li>
-														</ul>
+															class='icon download-icon'></i>分析&下载</a>
+														
 													</dd>
 												</dl>
 											</div>
@@ -245,13 +201,7 @@
 													class='pull-left copy-items'><i class='icon copy-icon'></i>复制</a><a
 													href='javascript:void(0)' class='pull-left cutout-items'
 													title='删除此问卷' onclick='deleteClick(${q.qid});'><i
-													class='icon cutout-icon'></i>删除 </a> <a
-													href='javascript:void(0)' class='pull-left folder-items'
-													onclick='alert("很抱歉，此功能仅对企业版客户提供，请升级！");'> <i
-													class='icon folder-icon'></i>文件夹
-												</a><a class='pull-left item-remind' href='javascript:void(0)'
-													onclick='PDF_launch("/wjx/notify/notify.aspx?activityid=21275213",752,386);'><i
-													class='icon remind-icon'></i>提醒</a>
+													class='icon cutout-icon'></i>删除 </a> 
 											</div>
 										</dd>
 									</dl>

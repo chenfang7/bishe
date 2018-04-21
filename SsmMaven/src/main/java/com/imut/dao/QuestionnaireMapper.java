@@ -29,4 +29,6 @@ public interface QuestionnaireMapper {
 
 	void insertquestion(List<Question> questions);
 
+	Questionnaire editquestionnaire(@Param("qid")String qid);
+
 }

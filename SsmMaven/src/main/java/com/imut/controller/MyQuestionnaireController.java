@@ -134,8 +134,19 @@ public class MyQuestionnaireController {
 		mqs.updatequestionnaire(questionnaire);
 		return "wolaial ";
 	}
+	
 	@RequestMapping(value = "/createqqq")
 	public String createqqq(){
 		return "createquestionnaire";
+	}
+	//编辑问卷
+	@RequestMapping(value = "/editqe")
+	public ModelAndView editquestionnaire(String qid){
+		Questionnaire questionnaire=mqs.editquestionnaire(qid);
+		System.out.println(questionnaire);
+		ModelAndView mav = new ModelAndView();
+		/*mav.addObject("questionnaire",questionnaire);
+		mav.setViewName("editquestionnaire");*/
+		return mav;
 	}
 }

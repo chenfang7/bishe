@@ -90,6 +90,11 @@ public class MyQuestionnaireServiceImpl implements MyQuestionnaireService {
 		questionnaireMapper.copyQuestion(questionnaire.getQuestions());
 	}
 
+	@Override
+	public Questionnaire editquestionnaire(String qid) {
+		return questionnaireMapper.editquestionnaire(qid);
+	}
+
 	
 
 }

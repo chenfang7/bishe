@@ -70,9 +70,30 @@
 	</insert>
 
 	<update id="updatequestionnaire" parameterType="com.imut.model.Questionnaire">
-		UPDATE `question`.`questionnaire` SET `qname`=#{qname}, `info`=#{info}
-		WHERE `qid`=#{qid}
+		UPDATE
+		`question`.`questionnaire` SET `qname`=#{qname}, `info`=#{info}
+		WHERE
+		`qid`=#{qid}
 	</update>
-	
-	
+	<!-- 编辑问卷返回的结果  -->
+	<!-- 返回类型 -->
+	<resultMap id="questionnaire" type="com.imut.model.Questionnaire">
+		<id property="qid" column="qid"/>
+		<result property="qname" column="qname"/>
+		<result property="quid" column="quid"/>
+		<result property="qstartdate" column="qstartdate" />
+		<result property="qenddate" column="qenddate" />
+		<result property="status" column="status"/>
+		<result property="sum" column="sum"/>
+		<result property="release" column="release"/>
+		<result property="info" column="info"/>
+		<collection property="questions" javaType="ArrayList" column="qid"
+			ofType="com.imut.model.Question" select="getQuestions" />
+	</resultMap>
+	<select id="editquestionnaire" resultMap="questionnaire">
+		select qid,qname,quid,qstartDate
+		as qstartdate,
+		qendDate as qenddate,`status`,sum,`release`,info from questionnaire
+		where qid=#{qid}
+	</select>
 </mapper>

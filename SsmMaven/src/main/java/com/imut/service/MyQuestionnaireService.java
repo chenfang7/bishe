@@ -23,4 +23,6 @@ public interface MyQuestionnaireService {
 	public int createquestionnaire(Questionnaire q);
 
 	public void updatequestionnaire(Questionnaire questionnaire);
+
+	public Questionnaire editquestionnaire(String qid);
 }
