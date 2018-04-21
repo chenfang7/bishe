@@ -26,14 +26,18 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	</bean>
 
 	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
-	<bean
+	 <!-- <bean 
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
 			<list>
-				<ref bean="mappingJacksonHttpMessageConverter" /><!-- json转换器 -->
+				<ref bean="mappingJacksonHttpMessageConverter" />json转换器
 			</list>
 		</property>
-	</bean>
+	</bean>  -->
+
+
+
+
 
 	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 	<bean
@@ -55,8 +59,8 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		</property>
 	</bean>
 <!-- 默认的注解映射的支持，自动注册DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter -->  
-    <mvc:annotation-driven />  
     
+    <mvc:annotation-driven />
     <!-- 对静态资源文件的访问-->  
     <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926"/>  
     <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926"/>  

@@ -25,4 +25,8 @@ public interface QuestionnaireMapper {
 
 	int createquestionnaire(Questionnaire q);
 
+	void updatequestionnaire(Questionnaire questionnaire);
+
+	void insertquestion(List<Question> questions);
+
 }

@@ -102,7 +102,7 @@
 									<div class="create-add pull-left">
 
 										<a
-											href='/newwjx/mysojump/choosetype.aspx?tttt=636583861167619687'
+											href='/createqqq'
 											title="创建新问卷"
 											class="btn btn-default btn-lg pull-left create-btn"> <i
 											class="icon create-icon"></i>创建问卷

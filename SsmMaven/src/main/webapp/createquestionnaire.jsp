@@ -1,9 +1,10 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>createquestionnaire.html</title>
 
-<meta charset="UTF-8">
+
 
 <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
 	<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>

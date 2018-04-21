@@ -40,11 +40,7 @@ public class MyBatisTest {
 	@Test
 	public void test(){
 		List<Question> list =new ArrayList<Question>();
-		list.add(new Question(1, 2, "问题1", 1, "[\"我是傻逼么？\"]"));
-		list.add(new Question(1, 2, "问题1", 1, "[\"我是傻逼么？\"]"));
-		list.add(new Question(1, 2, "w问题1部I", 1, "[\"我是傻逼么？\"]"));
-		list.add(new Question(1, 2, "wo问题1部I", 1, "[\"我是傻逼么？\"]"));
-		list.add(new Question(1, 2, "wo阿h问题1部I", 1, "[\"我是傻逼么？\"]"));
+
 		questionnaireMapper.copyQuestion(list);
 	
 	}

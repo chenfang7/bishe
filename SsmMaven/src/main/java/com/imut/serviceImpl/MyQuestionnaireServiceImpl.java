@@ -84,6 +84,12 @@ public class MyQuestionnaireServiceImpl implements MyQuestionnaireService {
 		return questionnaireMapper.createquestionnaire(q);
 	}
 
+	@Override
+	public void updatequestionnaire(Questionnaire questionnaire) {
+		questionnaireMapper.updatequestionnaire(questionnaire);
+		questionnaireMapper.copyQuestion(questionnaire.getQuestions());
+	}
+
 	
 
 }

@@ -23,11 +23,13 @@
 		quid = #{id} and status=0
 	</select>
 
-	<insert id="copyQuestionnaire" parameterType="com.imut.model.Questionnaire" useGeneratedKeys="true"
-		keyProperty="qid">
-		INSERT INTO `question`.`questionnaire` ( `qname`, `quid`,
+	<insert id="copyQuestionnaire" parameterType="com.imut.model.Questionnaire"
+		useGeneratedKeys="true" keyProperty="qid">
+		INSERT INTO
+		`question`.`questionnaire` ( `qname`, `quid`,
 		`qstartDate`,
-		`qendDate`, `status`) VALUES ( #{qname}, #{quid},
+		`qendDate`,
+		`status`) VALUES ( #{qname}, #{quid},
 		#{qstartdate},
 		#{qenddate}, '1');
 
@@ -60,9 +62,17 @@
 			)
 		</foreach>
 	</insert>
-	
+
 	<insert id="createquestionnaire" useGeneratedKeys="true"
 		keyProperty="qid">
-		INSERT INTO `question`.`questionnaire` ( `qname`, `quid`) VALUES ( #{qname}, #{quid});
-		</insert>
+		INSERT INTO `question`.`questionnaire` ( `qname`, `quid`)
+		VALUES ( #{qname}, #{quid});
+	</insert>
+
+	<update id="updatequestionnaire" parameterType="com.imut.model.Questionnaire">
+		UPDATE `question`.`questionnaire` SET `qname`=#{qname}, `info`=#{info}
+		WHERE `qid`=#{qid}
+	</update>
+	
+	
 </mapper>

@@ -22,7 +22,25 @@ public class Questionnaire {
 
     private List<Question> questions;
     
-    public List<Question> getQuestions() {
+    private String info;
+    
+    
+    @Override
+	public String toString() {
+		return "Questionnaire [qid=" + qid + ", qname=" + qname + ", quid=" + quid + ", qstartdate=" + qstartdate
+				+ ", qenddate=" + qenddate + ", status=" + status + ", sum=" + sum + ", release=" + release
+				+ ", questions=" + questions + ", info=" + info + "]";
+	}
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
+	public List<Question> getQuestions() {
 		return questions;
 	}
 

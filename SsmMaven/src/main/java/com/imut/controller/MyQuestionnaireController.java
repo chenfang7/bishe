@@ -6,8 +6,10 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.imut.model.Questionnaire;
@@ -123,5 +125,17 @@ public class MyQuestionnaireController {
 		mav.addObject("qqq",q );
 		mav.setViewName("editquestionnaire");
 		return mav;
+	}
+	
+	
+	@RequestMapping(value = "/updatequestionnaire")
+	public String updatequestionnaire(@RequestBody Questionnaire questionnaire){
+		
+		mqs.updatequestionnaire(questionnaire);
+		return "wolaial ";
+	}
+	@RequestMapping(value = "/createqqq")
+	public String createqqq(){
+		return "createquestionnaire";
 	}
 }
