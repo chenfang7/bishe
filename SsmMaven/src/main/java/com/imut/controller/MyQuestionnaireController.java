@@ -145,8 +145,8 @@ public class MyQuestionnaireController {
 		Questionnaire questionnaire=mqs.editquestionnaire(qid);
 		System.out.println(questionnaire);
 		ModelAndView mav = new ModelAndView();
-		/*mav.addObject("questionnaire",questionnaire);
-		mav.setViewName("editquestionnaire");*/
+		mav.addObject("qqq",questionnaire);
+		mav.setViewName("editquestionnaire");
 		return mav;
 	}
 }

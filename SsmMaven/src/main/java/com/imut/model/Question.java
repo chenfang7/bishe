@@ -2,6 +2,8 @@ package com.imut.model;
 
 import java.util.Arrays;
 
+import org.apache.jasper.tagplugins.jstl.core.ForEach;
+
 import net.sf.json.JSONArray;
 
 public class Question {
@@ -77,7 +79,14 @@ public class Question {
 	}
 
 	public void setOption(String option) {
+		System.out.println(option);
 		this.option = option;
+		JSONArray fromObject = JSONArray.fromObject(option);
+		String[] s=new String[fromObject.size()];
+		for (int i = 0; i < fromObject.size(); i++) {
+			s[i]=fromObject.getString(i);
+		}
+		optionstr=s;
 	}
 
 	public String[] getOptionstr() {

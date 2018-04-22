@@ -123,11 +123,34 @@ p.block {
 	<input id="qid" type="hidden" value="${qqq.qid}">
 	<div id='questions'>
 		<h1>
-			<span contenteditable="true">${qqq.qname}标题</span>
+			<span contenteditable="true">${qqq.qname}</span>
 		</h1>
 		<p>
 			<span contenteditable="true"><c:if test="${not empty qqq.info}">${qqq.info}</c:if><c:if test="${empty qqq.info}">为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，我们非常重视每位用户的宝贵意见，期待您的参与！现在我们就马上开始吧！</c:if></span>
 		</p>
+		<c:forEach items="${qqq.questions}" var="q" varStatus="stat">
+			<c:if test="${q.type==1}">
+				<div>
+					<input type="hidden" name="type" value="${q.type}">
+					<p class="block">
+						${stat.count}<span contenteditable="true">${q.tname}</span>
+						<button name="delete" style="display: none;"
+							onclick="deletequestion(this)">删除</button>
+					</p>
+					<c:forEach items="${q.optionstr}" var="option">
+					<p class="block">
+						<input type="radio" name="radio" value="${option}"><span
+							contenteditable="true">${option}</span>
+						<button name="delete" style="display: none;"
+							onclick="deleteoption(this)">删除</button>
+					</p>
+					</c:forEach>
+					
+					
+					<button onclick="addradiooption(this)">添加选项</button>
+				</div>
+			</c:if>
+		</c:forEach>
 	</div>
 	<button onclick="submit()">提交</button>
 </body>
