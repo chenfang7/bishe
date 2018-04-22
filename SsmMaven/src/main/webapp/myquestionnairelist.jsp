@@ -178,7 +178,7 @@
 												</dl>
 												<dl class='process-2 pull-left'>
 													<dd class='spinner-list'>
-														<a href='/newwjx/design/sendqstart.aspx?activity=21275213'><i
+														<a href='/getqrandurl?qid=${q.qid}'><i
 															class='icon recovery-icon'></i>链接&二维码</a>
 														
 													</dd>

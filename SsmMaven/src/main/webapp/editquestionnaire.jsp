@@ -82,7 +82,7 @@ p.block {
 			var i = 1;
 			var title
 			var arr = new Array();
-			var type = $("input[name='type']").val()
+			var type = $(this).children("input[name='type']").val()
 			$(this).children("p").each(function() {
 
 				if (i == 1) {
@@ -102,12 +102,18 @@ p.block {
 		$.ajax({
                 url : "updatequestionnaire",
                 type : "POST",
-                async : true,
+                async : false,
                 contentType : "application/json;charset=UTF-8",
                 data : Questionnaire,
                 dataType : 'json', 
                 success : function(data) {
-                    window.location.href='www.baidu.com'; 
+                	if(data.code=="登陆成功！"){
+                	
+                	 location.href="/list";
+                	}else{
+                		
+                	}
+                   
                 }
             });
 	}
@@ -129,11 +135,12 @@ p.block {
 			<span contenteditable="true"><c:if test="${not empty qqq.info}">${qqq.info}</c:if><c:if test="${empty qqq.info}">为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，我们非常重视每位用户的宝贵意见，期待您的参与！现在我们就马上开始吧！</c:if></span>
 		</p>
 		<c:forEach items="${qqq.questions}" var="q" varStatus="stat">
+		<!-- 单选题 -->
 			<c:if test="${q.type==1}">
 				<div>
 					<input type="hidden" name="type" value="${q.type}">
 					<p class="block">
-						${stat.count}<span contenteditable="true">${q.tname}</span>
+						${stat.count}.<span contenteditable="true">${q.tname}</span>
 						<button name="delete" style="display: none;"
 							onclick="deletequestion(this)">删除</button>
 					</p>
@@ -148,6 +155,42 @@ p.block {
 					
 					
 					<button onclick="addradiooption(this)">添加选项</button>
+				</div>
+			</c:if>
+			<!-- 多选题 -->
+			<c:if test="${q.type==2}">
+				<div>
+					<input type="hidden" name="type" value="${q.type}">
+					<p class="block">
+						${stat.count}.<span contenteditable="true">${q.tname}</span>
+						<button name="delete" style="display: none;"
+							onclick="deletequestion(this)">删除</button>
+					</p>
+					<c:forEach items="${q.optionstr}" var="option">
+					<p class="block">
+						<input type="checkbox" value="${option}"><span
+							contenteditable="true">${option}</span>
+						<button name="delete" style="display: none;"
+							onclick="deleteoption(this)">删除</button>
+					</p>
+					</c:forEach>
+					
+					<button onclick="addcheckboxoption(this)">添加选项</button>
+				</div>
+			</c:if>
+			
+			<!-- 填空题 -->
+			<c:if test="${q.type==3}">
+				<div>
+					<input type="hidden" name="type" value="${q.type}">
+					<p class="block">
+						${stat.count}.<span contenteditable="true">${q.tname}</span>
+						<button name="delete" style="display: none;"
+							onclick="deletequestion(this)">删除</button>
+					</p>
+					<p class="block">
+						<input type="text" name="text">
+					</p>
 				</div>
 			</c:if>
 		</c:forEach>

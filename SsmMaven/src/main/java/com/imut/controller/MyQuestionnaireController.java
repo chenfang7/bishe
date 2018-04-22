@@ -1,5 +1,8 @@
 package com.imut.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -127,12 +130,18 @@ public class MyQuestionnaireController {
 		return mav;
 	}
 	
-	
+	/**
+	 * 更新问卷
+	 * @param questionnaire
+	 * @return
+	 */
 	@RequestMapping(value = "/updatequestionnaire")
-	public String updatequestionnaire(@RequestBody Questionnaire questionnaire){
-		
+	@ResponseBody
+	public  Map<String, String> updatequestionnaire(@RequestBody Questionnaire questionnaire){
+		Map<String, String> message = new HashMap<>();
 		mqs.updatequestionnaire(questionnaire);
-		return "wolaial ";
+		message.put("code", "登陆成功！");
+		return message;
 	}
 	
 	@RequestMapping(value = "/createqqq")
@@ -143,10 +152,31 @@ public class MyQuestionnaireController {
 	@RequestMapping(value = "/editqe")
 	public ModelAndView editquestionnaire(String qid){
 		Questionnaire questionnaire=mqs.editquestionnaire(qid);
-		System.out.println(questionnaire);
+		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("qqq",questionnaire);
 		mav.setViewName("editquestionnaire");
+		return mav;
+	}
+	/**
+	 * 二维码和链接
+	 * @param qid
+	 * @return
+	 */
+	@RequestMapping(value = "/getqrandurl")
+	public ModelAndView getqrandurl(String qid){
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("qid",qid);
+		mav.setViewName("qrandurl");
+		return mav;
+	}
+	//questionnaire
+	@RequestMapping(value = "/questionnaire")
+	public ModelAndView questionnaire(String qid){
+		Questionnaire questionnaire=mqs.editquestionnaire(qid);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("qqq",questionnaire);
+		mav.setViewName("questionnaire");
 		return mav;
 	}
 }
