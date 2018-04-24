@@ -1,6 +1,7 @@
 package com.imut.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.imut.model.Answers;
 import com.imut.model.Questionnaire;
 import com.imut.model.User;
 import com.imut.service.MyQuestionnaireService;
@@ -178,5 +180,15 @@ public class MyQuestionnaireController {
 		mav.addObject("qqq",questionnaire);
 		mav.setViewName("questionnaire");
 		return mav;
+	}
+	//提交问卷
+	@RequestMapping(value = "/addanswers")
+	@ResponseBody
+	public Map<String, String> addanswers(@RequestBody List<Answers> list){
+		Map<String, String> message = new HashMap<>();
+		mqs.addanswers(list);
+
+		message.put("code", "提交成功！");
+		return message;
 	}
 }

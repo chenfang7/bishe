@@ -2,6 +2,7 @@ package com.imut.service;
 
 import java.util.List;
 
+import com.imut.model.Answers;
 import com.imut.model.Questionnaire;
 import com.imut.model.User;
 
@@ -25,4 +26,6 @@ public interface MyQuestionnaireService {
 	public void updatequestionnaire(Questionnaire questionnaire);
 
 	public Questionnaire editquestionnaire(String qid);
+
+	public void addanswers(List<Answers> list);
 }

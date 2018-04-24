@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.imut.dao.QuestionnaireMapper;
 import com.imut.dao.UserMapper;
+import com.imut.model.Answers;
 import com.imut.model.Question;
 import com.imut.model.Questionnaire;
 import com.imut.model.User;
@@ -93,6 +94,12 @@ public class MyQuestionnaireServiceImpl implements MyQuestionnaireService {
 	@Override
 	public Questionnaire editquestionnaire(String qid) {
 		return questionnaireMapper.editquestionnaire(qid);
+	}
+
+	@Override
+	public void addanswers(List<Answers> list) {
+		questionnaireMapper.addanswers(list);
+		
 	}
 
 	

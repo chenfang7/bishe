@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.imut.model.Answers;
 import com.imut.model.Question;
 import com.imut.model.Questionnaire;
 
@@ -30,5 +31,7 @@ public interface QuestionnaireMapper {
 	void insertquestion(List<Question> questions);
 
 	Questionnaire editquestionnaire(@Param("qid")String qid);
+
+	void addanswers(List<Answers> list);
 
 }
