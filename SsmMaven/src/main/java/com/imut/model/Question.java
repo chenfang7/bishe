@@ -1,8 +1,7 @@
 package com.imut.model;
 
 import java.util.Arrays;
-
-import org.apache.jasper.tagplugins.jstl.core.ForEach;
+import java.util.List;
 
 import net.sf.json.JSONArray;
 
@@ -19,6 +18,7 @@ public class Question {
 
 	private String[] optionstr;
 
+	private List<Answers> answers ;
 	public Question() {
 		super();
 	}
@@ -40,6 +40,14 @@ public class Question {
 	public String toString() {
 		return "Question [tid=" + tid + ", qid=" + qid + ", tname=" + tname + ", type=" + type + ", option=" + option
 				+ ", optionstr=" + Arrays.toString(optionstr) + "]";
+	}
+
+	public List<Answers> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<Answers> answers) {
+		this.answers = answers;
 	}
 
 	public Integer getTid() {
