@@ -4,7 +4,7 @@
 <!DOCTYPE HTML >
 <html>
 <head>
-<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 
 <title>编辑问卷</title>
 <style type="text/css">
