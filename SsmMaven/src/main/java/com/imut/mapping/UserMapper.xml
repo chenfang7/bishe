@@ -44,6 +44,37 @@
     where a.uid = #{id} AND a.uid=b.quid and status=1
   </select>
   
-  
+  <insert id="addUser" parameterType="com.imut.model.User" useGeneratedKeys="true" keyProperty="ID">
+  	insert into `user` values
+  	(
+	  	null,
+	  	#{uname},
+	  	#{upassword},
+	  	#{sex},
+	  	#{address},
+	  	#{phone},
+	  	#{head},
+	  	#{status},
+	  	#{createTime},
+	  	#{checkCode},
+	  	#{email}
+  	)
+  </insert>
+
+	<select id="checkUname" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select Uid from `user` where Uname = #{0}
+	</select>
+	
+	<select id="checkEmail" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select Uid from `user` where email = #{0}
+	</select>
+	
+	<select id="checkCode" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select Uid from `user` where email = #{0} and checkcode = #{1}
+	</select>
+	
+	<update id="userActive" parameterType="java.lang.Integer">
+		update `user` set `status` = 1 where Uid = #{0};
+	</update>
 
 </mapper>

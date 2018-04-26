@@ -1,5 +1,6 @@
 package com.imut.model;
 
+import java.util.Date;
 import java.util.List;
 
 public class User {
@@ -16,6 +17,16 @@ public class User {
     private String head;
 
     private String qq;
+    
+    private String address;
+    
+    private Integer status;
+    
+    private Date createTime;
+    
+    private String checkCode;
+    
+    private String email;
     
     private List<Questionnaire> qlist;
 
@@ -74,22 +85,22 @@ public class User {
     public void setSex(Integer sex) {
         this.sex = sex;
     }
-
-    public String getPhone() {
-        return phone;
-    }
-
+    
     @Override
 	public String toString() {
 		return "User [uid=" + uid + ", uname=" + uname + ", upassword=" + upassword + ", sex=" + sex + ", phone="
-				+ phone + ", head=" + head + ", qq=" + qq + ", qlist=" + qlist + "]"+qlist.get(0).toString();
+				+ phone + ", head=" + head + ", qq=" + qq + ", qlist=" + qlist + "]";
 	}
 
 	public void setPhone(String phone) {
         this.phone = phone == null ? null : phone.trim();
     }
+	
+    public String getPhone() {
+		return phone;
+	}
 
-    public String getHead() {
+	public String getHead() {
         return head;
     }
 
@@ -104,4 +115,46 @@ public class User {
     public void setQq(String qq) {
         this.qq = qq == null ? null : qq.trim();
     }
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public String getCheckCode() {
+		return checkCode;
+	}
+
+	public void setCheckCode(String checkCode) {
+		this.checkCode = checkCode;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+    
+    
 }

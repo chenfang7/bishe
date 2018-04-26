@@ -141,3 +141,11 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 SET FOREIGN_KEY_CHECKS=1;
+
+
+--2018/4/26
+alter table `user` add column `status` INT not null;
+alter table `user` add column `createTime` datetime not null;
+alter table `user` add column `checkcode` VARCHAR(255) not null;
+alter table `user` add column `email` VARCHAR(255) not null;
+ALTER TABLE `user` ADD INDEX index_email ( `email` );
