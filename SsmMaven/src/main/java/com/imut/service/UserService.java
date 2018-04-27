@@ -13,6 +13,9 @@ public interface UserService {
     //校验邮箱
     Integer checkEmail(String email);
     
-    //校验用户
+    //激活用户
     Integer userActive(String email,String code);
+    
+    //根据用户名(或者邮箱)查询用户
+    User getUserByNameOrEmail(User user);
 }

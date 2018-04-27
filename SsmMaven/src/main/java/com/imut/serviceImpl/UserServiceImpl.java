@@ -43,4 +43,10 @@ public class UserServiceImpl implements UserService{
 		}
 	}
 
+	@Override
+	public User getUserByNameOrEmail(User user) {
+		// TODO Auto-generated method stub
+		return userMapper.getUserByNameOrEmail(user);
+	}
+
 }

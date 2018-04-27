@@ -22,4 +22,7 @@ public interface UserMapper {
     
     //激活用户，修改用户状态为1
     Integer userActive(Integer uid);
+    
+    //根据用户名或邮箱校验密码是否正确
+    User getUserByNameOrEmail(User user);
 }

@@ -76,5 +76,15 @@
 	<update id="userActive" parameterType="java.lang.Integer">
 		update `user` set `status` = 1 where Uid = #{0};
 	</update>
+	
+	<select id="getUserByNameOrEmail" parameterType="com.imut.model.User" resultType="com.imut.model.User">
+		select * from `user` where
+		<if test="uname != null and uname != ''">
+			Uname = #{uname} 
+		</if>
+		<if test="email != null and email != ''">
+			email = #{email} 
+		</if>
+	</select>
 
 </mapper>
