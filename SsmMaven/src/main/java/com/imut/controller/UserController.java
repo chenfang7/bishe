@@ -23,7 +23,6 @@ import com.imut.util.SendMail;
 @RequestMapping("user")
 @Controller
 public class UserController {
-
 	@Resource
 	private UserService userService;
 	
@@ -99,12 +98,16 @@ public class UserController {
 	 */
 	@ResponseBody
 	@RequestMapping("active")
-	public String active(@RequestParam String email,@RequestParam String code){
+	public ModelAndView active(@RequestParam String email,@RequestParam String code){
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("activeresult");
 		if(userService.userActive(email, code) == 0){
-			return "激活失败，请联系网站管理员";
+			mav.addObject("result","激活失败，请联系网站管理员");
 		}else{
-			return "激活成功，请登录";
+			mav.addObject("result","激活成功，请登录");
 		}
+		return mav;
 	}
 	
 	/**
@@ -125,11 +128,12 @@ public class UserController {
 			user.setUname(name);
 		}
 		User userInf = userService.getUserByNameOrEmail(user);
-		
+		System.out.println(userInf.toString());
 		if(userInf != null){
 			if(userInf.getStatus() == 0){
 				return 1;
 			}else{
+
 				if(userInf.getUpassword().equals(AppMD5Util.getMD5(password))){
 					request.getSession().setAttribute("user", userInf);
 					return 0;

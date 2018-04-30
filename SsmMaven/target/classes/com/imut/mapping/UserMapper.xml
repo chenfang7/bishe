@@ -41,7 +41,7 @@
     select a.uid as uid ,a.uname as uname,a.sex as sex,a.phone as phone,a.head as head,a.qq as qq,
     b.qid,b.qname,b.qstartDate,b.qendDate
     from user a,questionnaire b
-    where a.uid = #{id} AND a.uid=b.quid and status=1
+    where a.uid = #{id} AND a.uid=b.quid and b.status=1
   </select>
   
   <insert id="addUser" parameterType="com.imut.model.User" useGeneratedKeys="true" keyProperty="ID">

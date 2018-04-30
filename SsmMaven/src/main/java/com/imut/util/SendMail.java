@@ -46,7 +46,7 @@ public class SendMail {
         // 2. 根据配置创建会话对象, 用于和邮件服务器交互
         Session session = Session.getInstance(props);
         session.setDebug(true);                                 // 设置为debug模式, 可以查看详细的发送 log
-        String url = "http://localhost:8080/SsmMaven/user/active?email="+email+"&code="+code;
+        String url = "http://localhost:8080/user/active?email="+email+"&code="+code;
         
         String content = "<a href="+url+">点此处激活账号</a>";
         // 3. 创建一封邮件

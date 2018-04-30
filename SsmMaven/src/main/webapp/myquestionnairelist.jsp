@@ -185,7 +185,7 @@
 												</dl>
 												<dl class='process-3 pull-left'>
 													<dd class='spinner-list'>
-														<a href='/report/21275213.aspx' title='答卷统计分析'><i
+														<a href='/goanalysis?qid=${q.qid}' title='答卷统计分析'><i
 															class='icon download-icon'></i>分析&下载</a>
 														
 													</dd>

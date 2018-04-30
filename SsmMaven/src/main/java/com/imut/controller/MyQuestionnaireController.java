@@ -25,7 +25,6 @@ import com.imut.serviceImpl.MyQuestionnaireServiceImpl;
 @Controller
 /* @RequestMapping("/myquestionnaire") */
 public class MyQuestionnaireController {
-
 	@Autowired
 	private MyQuestionnaireService mqs;
 
@@ -40,12 +39,13 @@ public class MyQuestionnaireController {
 		 * HttpSession session = request.getSession(); User user =
 		 * (User)session.getAttribute("user");
 		 */
-		request.getSession().setAttribute("user", new User(1, "jjj", "sss", 1, "110", null, "sss"));
-		User userById = mqs.getUserById("1");
-
+		
+		User user = (User) request.getSession().getAttribute("user");
+		System.out.println(user.toString());
+		User userAndQlist = mqs.getUserById(user.getUid()+"");
 		ModelAndView mav = new ModelAndView();
-		if (userById != null) {
-			mav.addObject("qlist", userById.getQlist());
+		if (userAndQlist != null) {
+			mav.addObject("qlist", userAndQlist.getQlist());
 		} else {
 			mav.addObject("qlist", null);
 		}
