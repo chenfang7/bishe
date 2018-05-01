@@ -28,4 +28,6 @@ public interface MyQuestionnaireService {
 	public Questionnaire editquestionnaire(String qid);
 
 	public void addanswers(List<Answers> list);
+
+
 }

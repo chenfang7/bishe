@@ -30,8 +30,9 @@
   		<id property="qid" column="qid"/>
   		<result property="quid" column="uid" />
   		<result property="qname" column="qname"/>
-  		<result property="qstartdate" />
-  		<result property="qstartdate"  /> 
+  		<result property="qstartdate" column="qstartDate" />
+  		<result property="qenddate" column="qendDate" /> 
+  		<result property="sum" column="sum" /> 
   	</collection>
   	
   </resultMap>
@@ -39,7 +40,7 @@
   
   <select id="selectByPrimaryKey" resultMap="userAndQuestion" >
     select a.uid as uid ,a.uname as uname,a.sex as sex,a.phone as phone,a.head as head,a.qq as qq,
-    b.qid,b.qname,b.qstartDate,b.qendDate
+    b.qid,b.qname,b.qstartDate,b.qendDate,b.sum
     from user a,questionnaire b
     where a.uid = #{id} AND a.uid=b.quid and b.status=1
   </select>

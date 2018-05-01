@@ -46,6 +46,7 @@ public class MyQuestionnaireController {
 		ModelAndView mav = new ModelAndView();
 		if (userAndQlist != null) {
 			mav.addObject("qlist", userAndQlist.getQlist());
+			mav.addObject("qu", userAndQlist);
 		} else {
 			mav.addObject("qlist", null);
 		}
@@ -184,10 +185,11 @@ public class MyQuestionnaireController {
 	//提交问卷
 	@RequestMapping(value = "/addanswers")
 	@ResponseBody
-	public Map<String, String> addanswers(@RequestBody List<Answers> list){
+	public Map<String, String> addanswers(@RequestBody List<Answers> list, HttpServletRequest request){
+		
+		
 		Map<String, String> message = new HashMap<>();
 		mqs.addanswers(list);
-
 		message.put("code", "提交成功！");
 		return message;
 	}

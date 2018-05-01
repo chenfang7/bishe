@@ -10,15 +10,25 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="renderer" content="webkit|ie-comp|ie-stand" />
 <meta id="ctl01_keywords" name="keywords" />
+<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
 <link id="ctl01_cssdefault" rel="stylesheet" type="text/css"
 	href="/css/default.css" />
 <link id="ctl01_quetsioncss" rel="stylesheet" type="text/css"
 	href="/css/myquestionnaires.css" />
 <link id="ctl01_cssmaster" rel="stylesheet" type="text/css"
 	href="/css/wjxmaster.css" />
-<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
-<script src="/js/zhezhao.js" type="text/javascript"></script>
+<link id="ctl01_cssdefault" rel="stylesheet" type="text/css"
+	href="css/buttons.css" />
+<!-- 	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	
 
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<script src="/js/zhezhao.js" type="text/javascript"></script>
+<script type="text/javascript">
+function searchwd(){
+	window.location.href="/searchlist?wd="+document.getElementById('search_new').value
+}
+</script>
 
 </head>
 <body>
@@ -47,7 +57,7 @@
 						</dt> -->
 						<dd class="spinner-list">
 							<a href="javascript:void(0)" class="user-name"><span
-								id="ctl01_lblUserName" style="text-align:center">15633706612</span></a>
+								id="ctl01_lblUserName" style="text-align:center">${qu.uname}</span></a>
 							
 						</dd>
 					</dl>
@@ -109,14 +119,16 @@
 										</a>
 										<div id="ctl01_ContentPlaceHolder1_divInfo"
 											class="create-search pull-left">
-											<input  type="text" name="wd"
+											<input id="search_new" type="text" name="wd"
 												id="ctl01_ContentPlaceHolder1_txtName" class="serarchbox"
 												onfocus="if(value==&#39;请输入问卷名进行搜索...&#39;){value=&#39;&#39;;}"
 												onblur="if(value==&#39;&#39;){value=&#39;请输入问卷名进行搜索...&#39;}"
 												value="请输入问卷名进行搜索..." onkeypress="return searchQ(event);" />
-											<input type="submit" name="ctl01$ContentPlaceHolder1$btnSub"
+											<!-- <input type="submit" name="ctl01$ContentPlaceHolder1$btnSub"
 												value="" id="ctl01_ContentPlaceHolder1_btnSub"
-												class="icon search-icon buttonboder" />
+												class="icon search-icon buttonboder" /> -->
+												<a   class=" btn btn-default btn-lg button button-highlight button-pill" onclick="searchwd()" >搜索</a>
+												
 										</div>
 									</div>
 
@@ -150,7 +162,7 @@
 
 
 								<div id="ctl01_ContentPlaceHolder1_qls" class="survey-list">
-								<c:forEach var="q" items="${qlist}">
+								<c:forEach var="q" items="${qlist}" >
 								<dl class='survey-items' style='z-index:100;position:relative'>
 										<dt class='item-top'>
 											<div class='pull-left'>
@@ -162,10 +174,10 @@
 											<div class='pull-right'>
 												<div class='pull-left item-draft'>●&nbsp;草稿</div>
 												<div class='pull-left item-sheet'>
-													答卷：<a href='javascript:void(0);' class='runing-num'>0</a>
+													答卷：<a href='javascript:void(0);' class='runing-num'>${q.sum}</a>
 												</div>
-												<div class='pull-left item-data'>3月11日</div>
-												<div class='pull-left item-time'>09:49</div>
+												<!-- <div class='pull-left item-data'>3月11日</div>
+												<div class='pull-left item-time'>09:49</div> -->
 											</div>
 										</dt>
 										<dd class='item-bot'>

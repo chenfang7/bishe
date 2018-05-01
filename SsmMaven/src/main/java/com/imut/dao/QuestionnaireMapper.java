@@ -34,4 +34,7 @@ public interface QuestionnaireMapper {
 
 	void addanswers(List<Answers> list);
 
+
+	void updatesum(@Param("qid")String qid);
+
 }

@@ -99,8 +99,10 @@ public class MyQuestionnaireServiceImpl implements MyQuestionnaireService {
 	@Override
 	public void addanswers(List<Answers> list) {
 		questionnaireMapper.addanswers(list);
-		
+		questionnaireMapper.updatesum(list.get(0).getQid()+"");
 	}
+
+
 
 	
 

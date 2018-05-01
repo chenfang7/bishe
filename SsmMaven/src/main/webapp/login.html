@@ -130,7 +130,7 @@
 					data:{name:$("#name").val(),password:$("#password").val()},
 					success:function(result){
 						if(result == 0){
-							window.location.href="http://localhost:8080/list"
+							window.location.href="/list"
 						}else{
 							if(result == 1){
 								$("#msg").html("用户未激活,请先前往邮箱进行激活");

@@ -79,7 +79,7 @@
 	margin: 0;
 	border: none;
 	cursor: pointer;
-    background: url("/images/newimg/pic-1/search.png") no-repeat center;
+    background: url("/img/search.png") no-repeat center;
 }
 .main-wrapper .survey-wrapper .survey-create .create-search .search-icon:hover {
 	background: url("/images/newimg/pic-1/search1.png") no-repeat center;

@@ -103,4 +103,7 @@
 		(#{a.randomuserid}, #{a.qid}, #{a.aresult}, #{a.tid})
 		</foreach>
 	</insert>
+	<update id="updatesum">
+		update questionnaire set sum=sum+1 where qid=#{qid}
+	</update>
 </mapper>

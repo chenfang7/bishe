@@ -7,8 +7,8 @@
   <link rel="stylesheet" type="text/css"
 	href="css/amazeui.min.css">
 	<link id="ctl01_cssdefault" rel="stylesheet" type="text/css"
-	href="/css/buttons.css" />
-<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+	href="css/buttons.css" />
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript"
 	src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
 <script type="text/javascript"
