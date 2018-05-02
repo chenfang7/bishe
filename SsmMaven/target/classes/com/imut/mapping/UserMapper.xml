@@ -45,7 +45,7 @@
     where a.uid = #{id} AND a.uid=b.quid and b.status=1
   </select>
   
-  <insert id="addUser" parameterType="com.imut.model.User" useGeneratedKeys="true" keyProperty="ID">
+  <insert id="addUser" parameterType="com.imut.model.User" useGeneratedKeys="true" keyProperty="uid">
   	insert into `user` values
   	(
 	  	null,
@@ -70,8 +70,8 @@
 		select Uid from `user` where email = #{0}
 	</select>
 	
-	<select id="checkCode" parameterType="java.lang.String" resultType="java.lang.Integer">
-		select Uid from `user` where email = #{0} and checkcode = #{1}
+	<select id="checkCode" resultType="java.lang.Integer">
+		select Uid from `user` where email = #{email} and checkcode = #{code}
 	</select>
 	
 	<update id="userActive" parameterType="java.lang.Integer">

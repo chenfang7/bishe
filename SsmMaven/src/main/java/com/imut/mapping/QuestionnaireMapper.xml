@@ -26,7 +26,7 @@
 	<insert id="copyQuestionnaire" parameterType="com.imut.model.Questionnaire"
 		useGeneratedKeys="true" keyProperty="qid">
 		INSERT INTO
-		`question`.`questionnaire` ( `qname`, `quid`,
+		`questionnaire` ( `qname`, `quid`,
 		`qstartDate`,
 		`qendDate`,
 		`status`) VALUES ( #{qname}, #{quid},
@@ -65,13 +65,13 @@
 
 	<insert id="createquestionnaire" useGeneratedKeys="true"
 		keyProperty="qid">
-		INSERT INTO `question`.`questionnaire` ( `qname`, `quid`)
+		INSERT INTO `questionnaire` ( `qname`, `quid`)
 		VALUES ( #{qname}, #{quid});
 	</insert>
 
 	<update id="updatequestionnaire" parameterType="com.imut.model.Questionnaire">
 		UPDATE
-		`question`.`questionnaire` SET `qname`=#{qname}, `info`=#{info}
+		`questionnaire` SET `qname`=#{qname}, `info`=#{info}
 		WHERE
 		`qid`=#{qid}
 	</update>
@@ -98,7 +98,7 @@
 	</select>
 	
 	<insert id="addanswers" parameterType="java.util.List">
-		INSERT INTO `question`.`answers` ( `randomuserid`, `qid`, `aresult`,  `tid`) VALUES 
+		INSERT INTO `answers` ( `randomuserid`, `qid`, `aresult`,  `tid`) VALUES 
 		<foreach collection="list" item="a" index= "index" separator =",">
 		(#{a.randomuserid}, #{a.qid}, #{a.aresult}, #{a.tid})
 		</foreach>

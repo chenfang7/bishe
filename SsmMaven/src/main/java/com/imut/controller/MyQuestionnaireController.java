@@ -41,7 +41,6 @@ public class MyQuestionnaireController {
 		 */
 		
 		User user = (User) request.getSession().getAttribute("user");
-		System.out.println(user.toString());
 		User userAndQlist = mqs.getUserById(user.getUid()+"");
 		ModelAndView mav = new ModelAndView();
 		if (userAndQlist != null) {

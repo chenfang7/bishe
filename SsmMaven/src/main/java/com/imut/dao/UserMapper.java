@@ -1,6 +1,8 @@
 package com.imut.dao;
 
 
+import org.apache.ibatis.annotations.Param;
+
 import com.imut.model.User;
 
 public interface UserMapper {
@@ -18,7 +20,7 @@ public interface UserMapper {
     Integer checkEmail(String email);
     
     //校验邮箱和激活码
-    Integer checkCode(String email,String code);
+    Integer checkCode(@Param("email")String email,@Param("code")String code);
     
     //激活用户，修改用户状态为1
     Integer userActive(Integer uid);
