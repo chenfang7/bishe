@@ -18,7 +18,12 @@ a {
 a:hover {
   color: #29a3a3;
 }
-
+#newPwdPrompt img{
+  display: none;
+}
+#rePwdPrompt img{
+  display: none;
+}
 .menu {
   padding: 0;
   margin: 30px 0 0 0;
