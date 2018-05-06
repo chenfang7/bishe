@@ -13,7 +13,7 @@
   <script type="text/javascript">
     $(document).ready(function() {
         var qrcode = new QRCode(document.getElementById("qrcode"), {
-        text: "http://127.0.0.1:8080/questionnaire?qid="+${qid},
+        text: "http://127.0.0.1:8080${pageContext.request.contextPath}/questionnaire?qid="+${qid},
             width : 100,
             height : 100
         });
@@ -2508,7 +2508,7 @@ fieldset{border:0;}
            <div id="qrcode" style="width:100px; height:100px; margin-top:15px;margin:0 auto;">
            </div>
            
-<div style="width:200px; height:100px; margin:0 auto;margin-top:15px;margin-left:304px;"><a href="http://127.0.0.1:8080/questionnaire?qid=${qid}" class="button button-3d button-action button-pill" >打开问卷</a></div>
+<div style="width:200px; height:100px; margin:0 auto;margin-top:15px;margin-left:304px;"><a href="http://127.0.0.1:8080${pageContext.request.contextPath}/questionnaire?qid=${qid}" class="button button-3d button-action button-pill" >打开问卷</a></div>
 
 <br/>
 <br/>

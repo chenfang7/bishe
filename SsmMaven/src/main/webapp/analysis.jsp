@@ -2467,7 +2467,7 @@ fieldset{border:0;}
   </style>
   <script type="text/javascript">
   function download(qid){
-  	location.href='/download?qid='+qid
+  	location.href='${pageContext.request.contextPath}/download?qid='+qid
   }
   </script>
  </head>

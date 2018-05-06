@@ -115,7 +115,10 @@
 	<script src="js/checkCode.js"></script>
 	</body>
 	<script type="text/javascript">
-	
+	//获取路径
+var pathName=window.document.location.pathname;
+//截取，得到项目名称
+var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);
 		function submit(){
 			var name = $.trim($("#name").val());
 			var password = $.trim($("#password").val());
@@ -125,12 +128,12 @@
 				$("#msg").html("密码不能为空");
 			}else if(validate()){
 				$.ajax({
-					url:'user/login',
+					url:projectName+'/user/login',
 					type:'POST',
 					data:{name:$("#name").val(),password:$("#password").val()},
 					success:function(result){
 						if(result == 0){
-							window.location.href="/list"
+							window.location.href=projectName+"/list"
 						}else{
 							if(result == 1){
 								$("#msg").html("用户未激活,请先前往邮箱进行激活");

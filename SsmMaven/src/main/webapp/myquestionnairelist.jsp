@@ -26,7 +26,7 @@
 <script src="/js/zhezhao.js" type="text/javascript"></script>
 <script type="text/javascript">
 function searchwd(){
-	window.location.href="/searchlist?wd="+document.getElementById('search_new').value
+	window.location.href="searchlist?wd="+document.getElementById('search_new').value
 }
 </script>
 
@@ -62,7 +62,7 @@ function searchwd(){
 						</dd>
 					</dl>
 					 <dl class="user-info pull-left">
-						<a class="user-name" href="/list">
+						<a class="user-name" href="list">
 							<dt id="ctl01_spanMessage" class="icon info-icon"></dt>
 							<dd class="spinner-list">
 								<span>我的问卷</span>
@@ -112,7 +112,7 @@ function searchwd(){
 									<div class="create-add pull-left">
 
 										<a
-											href='/createqqq'
+											href='createqqq'
 											title="创建新问卷"
 											class="btn btn-default btn-lg pull-left create-btn"> <i
 											class="icon create-icon"></i>创建问卷
@@ -184,20 +184,20 @@ function searchwd(){
 											<div class='process-box pull-left'>
 												<dl class='process-1 pull-left'>
 													<dd class='spinner-list'>
-														<a href='/editqe?qid=${q.qid}'><i
+														<a href='editqe?qid=${q.qid}'><i
 															class='icon design-icon'></i>编辑问卷</a>
 													</dd>
 												</dl>
 												<dl class='process-2 pull-left'>
 													<dd class='spinner-list'>
-														<a href='/getqrandurl?qid=${q.qid}'><i
+														<a href='getqrandurl?qid=${q.qid}'><i
 															class='icon recovery-icon'></i>链接&二维码</a>
 														
 													</dd>
 												</dl>
 												<dl class='process-3 pull-left'>
 													<dd class='spinner-list'>
-														<a href='/goanalysis?qid=${q.qid}' title='答卷统计分析'><i
+														<a href='goanalysis?qid=${q.qid}' title='答卷统计分析'><i
 															class='icon download-icon'></i>分析&下载</a>
 														
 													</dd>

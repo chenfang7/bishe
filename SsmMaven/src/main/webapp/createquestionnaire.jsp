@@ -29,7 +29,7 @@
 </body>
 <script type="text/javascript">
 	function gocreate() {
-	window.location.href='/create?name='+$("#text1").val()
+	window.location.href='${pageContext.request.contextPath}/create?name='+$("#text1").val()
 	}
 </script>
 </html>

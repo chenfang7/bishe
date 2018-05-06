@@ -118,7 +118,7 @@
 		alert(Questionnaire)
 		//编辑会重复提交 之前的问题  (bug)
 		$.ajax({
-                url : "updatequestionnaire",
+                url : "${pageContext.request.contextPath}/updatequestionnaire",
                 type : "POST",
                 async : false,
                 contentType : "application/json;charset=UTF-8",

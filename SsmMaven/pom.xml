@@ -188,7 +188,7 @@
 				<version>2.2</version>
 				<configuration>
 					<port>8080</port>
-					<path>/</path>
+					<path>/SsmMaven</path>
 					
 					<url>http://127.0.0.1:8080/manager/text</url>
                 <username>admin</username>
