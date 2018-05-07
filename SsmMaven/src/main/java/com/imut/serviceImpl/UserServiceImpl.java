@@ -1,7 +1,6 @@
 package com.imut.serviceImpl;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.imut.dao.UserMapper;
@@ -11,7 +10,7 @@ import com.imut.service.UserService;
 @Service
 public class UserServiceImpl implements UserService{
 
-	@Resource
+	@Autowired
 	private UserMapper userMapper;
 	
 	@Override
