@@ -190,14 +190,14 @@
 					<port>8080</port>
 					<path>/SsmMaven</path>
 					
-					<!-- <url>http://127.0.0.1:8080/manager/text</url>
-                <username>admin</username>
+					<!--  <url>http://127.0.0.1:8080/manager/text</url> -->
+                <!-- <username>admin</username>
                 <password>admin</password>
                 <update>true</update>  -->
 					
 					<uriEncoding>UTF-8</uriEncoding>
 					<finalName>my-proxy</finalName>
-					<server>tomcat7</server>
+					<!-- <server>tomcat7</server> -->
 				</configuration>
 			</plugin>
 		</plugins>

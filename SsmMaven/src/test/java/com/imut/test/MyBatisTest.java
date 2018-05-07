@@ -49,7 +49,7 @@ public class MyBatisTest {
 	@Test
 	public void test() throws IOException{
 		
-		Connection con = Jsoup.connect("http://127.0.0.1:8080/goanalysis?qid=45");
+		/*Connection con = Jsoup.connect("http://127.0.0.1:8080/goanalysis?qid=45");
 		Document document = con.get();
 		Elements select = document.select("[href=css/amazeui.min.css]").remove();
 
@@ -60,7 +60,7 @@ public class MyBatisTest {
 	    fs.createDocument(is, "WordDocument");  
 	    fs.writeFilesystem(os);  
 	    os.close();  
-	    is.close();  
+	    is.close();  */
 	    
 	}
 	/*@Test
