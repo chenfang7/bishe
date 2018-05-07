@@ -2610,7 +2610,7 @@ fieldset{border:0;}
         <div class="shopcart" id="shopcart" style="display:none;"></div>
         <div id="submit_div" style="padding-top: 6px;clear:both; padding-bottom:10px;">
             <div style="background:#ffffff" align="center">
-                <a href="#" class="sumitbutton" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px" onclick="submit()">提交问卷</a>
+                <a href="javascript:void(0)" class="sumitbutton" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px" onclick="submit()">提交问卷</a>
             </div>
          <div style="clear:both;"></div>
         </div>
@@ -2622,7 +2622,7 @@ fieldset{border:0;}
   </div>
 
 
-   <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+   <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
         //用于生成uuid
     function S4() {
@@ -2674,7 +2674,7 @@ fieldset{border:0;}
                 qs.push(question)
             })
             qs='['+qs+']'
-            alert(qs)
+          
             $.ajax({
                 url : "addanswers",
                 type : "POST",

@@ -42,7 +42,7 @@
 
 	});
 	var i = 1;
-  if('${qqq.questions}'!=null){
+  if('${qqq.questions}'!=""){
     <c:forEach items="${qqq.questions}" var="q" varStatus="stat">
          i=${stat.count}
     </c:forEach>
@@ -97,7 +97,7 @@
 		$(".fieldset > .div_question").each(function() {
 			var i = 1;
 			var title=$(this).find(".div_title_question > span:first").text()
-      alert(title)
+    
 			var arr = new Array();
 			var type = $(this).find("input[name='type']").val()
       if(type!=3){
@@ -115,7 +115,7 @@
 		})
 		
 		Questionnaire = '{"qid":' + qid + ',"qname":"' + qname + '","info":"' + info + '","questions":[' + questions + ']}'
-		alert(Questionnaire)
+		
 		//编辑会重复提交 之前的问题  (bug)
 		$.ajax({
                 url : "${pageContext.request.contextPath}/updatequestionnaire",
@@ -127,7 +127,7 @@
                 success : function(data) {
                 	if(data.code=="登陆成功！"){
                 	
-                	 location.href="/list";
+                	 location.href="list";
                 	}else{
                 		
                 	}

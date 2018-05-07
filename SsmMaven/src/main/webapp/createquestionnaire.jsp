@@ -4,7 +4,7 @@
 <head>
 <title>createquestionnaire.html</title>
 <link rel="stylesheet" href="css/common.css" type="text/css">
-	<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
 </body>
 <script type="text/javascript">
 	function gocreate() {
-	window.location.href='${pageContext.request.contextPath}/create?name='+$("#text1").val()
+	window.location.href='create?name='+$("#text1").val()
 	}
 </script>
 </html>

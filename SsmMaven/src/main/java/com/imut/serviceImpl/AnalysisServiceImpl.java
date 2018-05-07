@@ -96,13 +96,13 @@ public class AnalysisServiceImpl implements AnalysisService {
 	//生成下载的问卷
 	@Override
 	public void download(String qid) throws IOException {
-		Connection con = Jsoup.connect("http://127.0.0.1:8080/goanalysis?qid="+qid);
+		Connection con = Jsoup.connect("http://127.0.0.1:8080/SsmMaven/goanalysis?qid="+qid);
 		Document document = con.get();
 		document.select("[href=css/amazeui.min.css]").remove();
 		document.select("[href=/css/buttons.css]").remove();
 
 		InputStream is = new ByteArrayInputStream(document.html().getBytes("UTF-8"));
-		OutputStream os = new FileOutputStream("f:\\"+qid+".doc");  
+		OutputStream os = new FileOutputStream("d:\\"+qid+".doc");  
 		POIFSFileSystem fs = new POIFSFileSystem();  
 	    //对应于org.apache.poi.hdf.extractor.WordDocument  
 	    fs.createDocument(is, "WordDocument");  

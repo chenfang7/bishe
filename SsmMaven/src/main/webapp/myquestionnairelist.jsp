@@ -10,20 +10,20 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta name="renderer" content="webkit|ie-comp|ie-stand" />
 <meta id="ctl01_keywords" name="keywords" />
-<script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 <link id="ctl01_cssdefault" rel="stylesheet" type="text/css"
-	href="/css/default.css" />
+	href="css/default.css" />
 <link id="ctl01_quetsioncss" rel="stylesheet" type="text/css"
-	href="/css/myquestionnaires.css" />
+	href="css/myquestionnaires.css" />
 <link id="ctl01_cssmaster" rel="stylesheet" type="text/css"
-	href="/css/wjxmaster.css" />
+	href="css/wjxmaster.css" />
 <link id="ctl01_cssdefault" rel="stylesheet" type="text/css"
 	href="css/buttons.css" />
 <!-- 	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	
 
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-<script src="/js/zhezhao.js" type="text/javascript"></script>
+<script src="js/zhezhao.js" type="text/javascript"></script>
 <script type="text/javascript">
 function searchwd(){
 	window.location.href="searchlist?wd="+document.getElementById('search_new').value
@@ -86,10 +86,10 @@ function searchwd(){
 		<div class="BS-box" style="text-align:left;">
 
 
-			<link rel="stylesheet" type="text/css" href="/css/folder-set.css" />
-			<script type="text/javascript" src="/newwjx/js/myquestionnaires.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/folder-set.css" />
+			<script type="text/javascript" src="newwjx/js/myquestionnaires.js"></script>
 
-			<script src="/newwjx/js/selectpick.js" type="text/javascript"></script>
+			<script src="newwjx/js/selectpick.js" type="text/javascript"></script>
 			<form name="aspnetForm" method="post"
 				action="/searchlist" id="aspnetForm">
 				<div>
@@ -537,7 +537,7 @@ function searchwd(){
 			hrefPGoBack.href = "/newwjx/mysojump/choosetype.aspx?t=" + new Date().valueOf();
 	</script>
 
-	<script src="/newwjx/js/modernizr.js" type="text/javascript"></script>
+	<script src="newwjx/js/modernizr.js" type="text/javascript"></script>
 </body>
 
 

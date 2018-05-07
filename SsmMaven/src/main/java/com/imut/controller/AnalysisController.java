@@ -49,7 +49,7 @@ public class AnalysisController {
     public ResponseEntity<byte[]> download(String qid) throws IOException {    
 		
 		analysisService.download(qid);
-		String path = "f:\\" + qid + ".doc";
+		String path = "d:\\" + qid + ".doc";
 		File file = new File(path);
 		HttpHeaders headers = new HttpHeaders();
 		String fileName = new String("问卷调查结果.doc".getBytes("UTF-8"), "iso-8859-1");// 为了解决中文名称乱码问题

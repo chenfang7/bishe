@@ -9,7 +9,7 @@
 
 <script type="text/javascript"
     src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
-    <script type="text/javascript" src="/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
         var qrcode = new QRCode(document.getElementById("qrcode"), {
