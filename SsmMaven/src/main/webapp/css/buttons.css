@@ -279,25 +279,32 @@
 
 .button-highlight,
 .button-highlight-flat {
-  background-color: #FEAE1B;
-  border-color: #FEAE1B;
-  color: #FFF; }
+	  background-color: #74cfae;
+	  border-color: #74cfae;
+	  color: #FFF; 
+	  width: 80px;
+	  height: 36px;
+	  padding: 0 0 38px 0;
+	  position: relative;
+	  top: -2px;
+	  left: 4px;
+  }
   .button-highlight:visited,
   .button-highlight-flat:visited {
     color: #FFF; }
   .button-highlight:hover, .button-highlight:focus,
   .button-highlight-flat:hover,
   .button-highlight-flat:focus {
-    background-color: #fec04e;
-    border-color: #fec04e;
+    background-color: #76b19c;
+    border-color: #76b19c;
     color: #FFF; }
   .button-highlight:active, .button-highlight.active, .button-highlight.is-active,
   .button-highlight-flat:active,
   .button-highlight-flat.active,
   .button-highlight-flat.is-active {
-    background-color: #f3ab26;
-    border-color: #f3ab26;
-    color: #e59501; }
+    background-color: #91d4bc;
+    border-color: #91d4bc;
+    color: #fff; }
 
 .button-caution,
 .button-caution-flat {

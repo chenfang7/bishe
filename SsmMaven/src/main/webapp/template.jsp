@@ -35,9 +35,9 @@
 	          <span class="hint" contenteditable="true">&nbsp; &nbsp;为了给您提供更好的服务，希望您能抽出几分钟时间，将您的感受和建议告诉我们，我们非常重视每位用户的宝贵意见，期待您的参与！现在我们就马上开始吧！</span>
 	       	</p></br> 
 	   <div class="butelect">
-		    <button class="btn-primary" onclick="addRadio()">添加单选题</button>
-		    <button class="btn-primary" onclick="addCheckBox()">添加多选题</button>
-		    <button class="btn-primary" onclick="addQA()">添加填空题</button>
+		    <button class="btm-primary" onclick="addRadio()">添加单选题</button>
+		    <button class="btm-primary" onclick="addCheckBox()">添加多选题</button>
+		    <button class="btm-primary" onclick="addQA()">添加填空题</button>
 	   </div>
 	        <HR style="FILTER: progid:DXImageTransform.Microsoft.Glow(color=#987cb9,strength=10)" width="97%" color=#987cb9 SIZE=1><!-- 分割线 -->
 		</div><!--编辑问卷栏 -->

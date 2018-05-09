@@ -19,6 +19,7 @@
 	href="css/wjxmaster.css" />
 <link id="ctl01_cssdefault" rel="stylesheet" type="text/css"
 	href="css/buttons.css" />
+<link rel="stylesheet" href="css/common.css" type="text/css">
 <!-- 	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	
 
@@ -82,7 +83,8 @@ function searchwd(){
 				</div>
 			</div>
 		</div>
-
+		<div id="ctl01_ContentPlaceHolder1_surveyfolder" class="survey__folder" style="    width: 1250px;
+    left: 83px;"></div>
 		<div class="BS-box" style="text-align:left;">
 
 
@@ -143,7 +145,7 @@ function searchwd(){
 									<a href="${pageContext.request.contextPath}/recyclebin?id=${sessionScope.user.uid}"
 										id="ctl01_ContentPlaceHolder1_hrefDelete"
 										class="btn btn-default btn-lg pull-right refuse-btn"
-										style="margin-left:10px;"> <i class="icon refuse-icon"></i>回收站
+										style="margin-left:10px;">回收站
 									</a> <input type="hidden" name="ctl01$ContentPlaceHolder1$hfFolder"
 										id="ctl01_ContentPlaceHolder1_hfFolder" value="null" />
 
@@ -156,8 +158,7 @@ function searchwd(){
 
 
 								<!-- 新修改文件夹功能 START -->
-								<div id="ctl01_ContentPlaceHolder1_surveyfolder"
-									class="survey__folder"></div>
+							
 								<!-- 新修改文件夹功能 END -->
 
 
@@ -172,7 +173,6 @@ function searchwd(){
 												<div class='pull-left item-id'>ID:${q.qid}</div>
 											</div>
 											<div class='pull-right'>
-												<div class='pull-left item-draft'>●&nbsp;草稿</div>
 												<div class='pull-left item-sheet'>
 													答卷：<a href='javascript:void(0);' class='runing-num'>${q.sum}</a>
 												</div>
