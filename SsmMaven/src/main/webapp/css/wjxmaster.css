@@ -33,7 +33,6 @@
 {
    width:200px;
    height:36px;
-   background-image: url(/images/newimg/index/mobieindexnew.png) ;
    background-size:cover;
    display:inline-block;
    font-size: 20px;
@@ -177,14 +176,10 @@
 	border-radius: 100px;
 	background-color: #ff6060;
 }
-.user-wrapper dl dt.info-icon {
-	background: url("/Images/newimg/news.png") no-repeat center;
-}
+
 .user-wrapper dl dt.out-icon {
-	background: url("/Images/newimg/exit.png") no-repeat center;
 }
 .user-wrapper dl i.questions-icon {
-    background: url("/Images/newimg/home24.png") no-repeat center;
     width: 24px;
     height: 20px;
 }

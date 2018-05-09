@@ -130,7 +130,16 @@
 	<script src="js/checkCode.js"></script>
 	</body>
 	<script type="text/javascript">
+	
+		var status = false;	
+	
 		$("#uname").blur(function(){
+			if($("#uname").val() ==''){
+				status = false;
+				$("#inf").html("用户名不能为空");
+				$("#alert").css("display","block");
+				return;
+			}
 			$.ajax({
 				url:"user/checkUname",
 				type:"GET",
@@ -145,23 +154,15 @@
 				}
 			})
 		});
-		
-		$("#email").blur(function(){
-			$.ajax({
-				url:'user/checkEmail',
-				type:'get',
-				data:{email:$("#email").val()},
-				success:function(data){
-					if(data == 1){
-						$("#inf").html("该邮箱已注册");
-						$("#alert").css("display","block");
-					}else{
-						$("#alert").css("display","none");
-					}
-				}
-			})
-		});
-		
+		$("#password").blur(function(){
+			if($("#password").val=''){
+				status = false;
+				$("#inf").html("密码不能为空");
+				$("#alert").css("display","block");
+				return;
+			}
+		$
+		})
 		
 		function check(){
 			

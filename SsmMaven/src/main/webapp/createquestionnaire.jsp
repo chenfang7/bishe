@@ -15,11 +15,15 @@
      		<div style="display:none;"></div>
     	</div>
    </div>
-   <div id="mainCss">
+   <div id="box">
+   
     <div id="mainInner">
-     <div id="box">
-		<div>
-			<input class="form-control" type="text" id="text1">
+	    <div id="content"><h10 class="head">创建调查问卷</h10></div>
+     <div id="mainCss">
+	    	
+		<div style="margin:0 auto;width:700px;text-align:center;padding-top:100px;">
+			<lable class="lable">调查名称：</lable>
+			<input type="text" name="wd" id="text1" class="form-control" onfocus="if(value=='请输入新建的问卷名...'){value='';}" onblur="if(value==''){value='请输入新建的问卷名...'}" value="请输入新建的问卷名..." onkeypress="return searchQ(event);">
 			<button class="btn-primary" onclick='gocreate()'>创建问卷</button>
 		</div>
 	 </div>

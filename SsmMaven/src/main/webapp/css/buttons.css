@@ -279,9 +279,9 @@
 
 .button-highlight,
 .button-highlight-flat {
-	  background-color: #74cfae;
-	  border-color: #74cfae;
-	  color: #FFF; 
+	  background-color: #50cca0;
+	  border-color: #50cca0;
+	  color: #f5f2f2; 
 	  width: 80px;
 	  height: 36px;
 	  padding: 0 0 38px 0;
@@ -295,8 +295,8 @@
   .button-highlight:hover, .button-highlight:focus,
   .button-highlight-flat:hover,
   .button-highlight-flat:focus {
-    background-color: #76b19c;
-    border-color: #76b19c;
+    background-color: #87d0b6;
+    border-color: #87d0b6;
     color: #FFF; }
   .button-highlight:active, .button-highlight.active, .button-highlight.is-active,
   .button-highlight-flat:active,

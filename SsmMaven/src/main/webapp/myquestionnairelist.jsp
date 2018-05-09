@@ -89,9 +89,8 @@ function searchwd(){
 
 
 			<link rel="stylesheet" type="text/css" href="css/folder-set.css" />
-			<script type="text/javascript" src="newwjx/js/myquestionnaires.js"></script>
+	
 
-			<script src="newwjx/js/selectpick.js" type="text/javascript"></script>
 			<form name="aspnetForm" method="post"
 				action="/searchlist" id="aspnetForm">
 				<div>
@@ -120,7 +119,7 @@ function searchwd(){
 											class="icon create-icon"></i>创建问卷
 										</a>
 										<div id="ctl01_ContentPlaceHolder1_divInfo"
-											class="create-search pull-left">
+											class="create-search pull-right">
 											<input id="search_new" type="text" name="wd"
 												id="ctl01_ContentPlaceHolder1_txtName" class="serarchbox"
 												onfocus="if(value==&#39;请输入问卷名进行搜索...&#39;){value=&#39;&#39;;}"
@@ -232,9 +231,7 @@ function searchwd(){
 								<div class="article-plus">
 									<dl class="article-service">
 
-										<a href="#" class="head"> <img
-											src="/Images/newimg/pic-1/service.png" alt="">客服中心
-										</a>
+										
 										<dd id="ctl01_ContentPlaceHolder1_divServicenew">
 											<a href='javascript: void(0);'
 												onclick='PDF_launch("/wjx/manage/onlinesupport.aspx", 620, 400); '
@@ -279,9 +276,7 @@ function searchwd(){
 									</dl>
 
 									<dl class="article-feedback">
-										<a href="/jq/3685992.aspx" target="_blank" class="head"> <img
-											src="/Images/newimg/pic-1/advice.png" alt="">意见反馈
-										</a>
+										
 									</dl>
 
 								</div>
@@ -537,7 +532,6 @@ function searchwd(){
 			hrefPGoBack.href = "/newwjx/mysojump/choosetype.aspx?t=" + new Date().valueOf();
 	</script>
 
-	<script src="newwjx/js/modernizr.js" type="text/javascript"></script>
 </body>
 
 

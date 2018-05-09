@@ -7,10 +7,11 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
 
 public class SendMail {
 
-	public static void send(String sendto,String email,String code) throws Exception{
+	public static void send(String sendto,String email,String code,HttpServletRequest request) throws Exception{
 		 // 发件人的 邮箱 和 密码（替换为自己的邮箱和密码）
 	    // PS: 某些邮箱服务器为了增加邮箱本身密码的安全性，给 SMTP 客户端设置了独立密码（有的邮箱称为“授权码”）, 
 	    //     对于开启了独立密码的邮箱, 这里的邮箱密码必需使用这个独立密码（授权码）。
@@ -46,7 +47,7 @@ public class SendMail {
         // 2. 根据配置创建会话对象, 用于和邮件服务器交互
         Session session = Session.getInstance(props);
         session.setDebug(true);                                 // 设置为debug模式, 可以查看详细的发送 log
-        String url = "http://localhost:8080/user/active?email="+email+"&code="+code;
+        String url = "http://localhost:8080"+request.getContextPath()+"/user/active?email="+email+"&code="+code;
         
         String content = "<a href="+url+">点此处激活账号</a>";
         // 3. 创建一封邮件

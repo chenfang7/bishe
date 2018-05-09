@@ -2444,9 +2444,10 @@ width: 920px;
 margin: 0 auto;
 }
 #mainCss {
-background: white;
-width: 920px;
-margin: 0 auto;
+	background: white;
+	width: 920px;
+    height: 650px;
+	margin: 0 auto;
 }
 #footercss {
 width: 920px;
@@ -2508,15 +2509,66 @@ fieldset{border:0;}
 	left:10px;
 }
 .form-control{
-	font-size: 16px;
     font-weight: 300;
-    height: 30px;
-    width:500px;
-    padding-left: 0;
-    padding-right: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
-    border-color:#ffffff;
+    width: 500px;
+    height: 28px;
+    line-height: 1.6;
+    padding: 8px 0 8px 16px;
+    font-size: 12px;
+    color: #b2b2b2;
+    border-radius: 6px;
+    border: 1px solid #b3b3b3;
+}
+#found{
+	height:500px;
+	right:1200px;
+}
+#content{
+	height:66px;
+	width:920px;
+	background:rgb(247,248,248);
+}
+.head{
+	font-size: 24px;
+    font-style: normal;
+    line-height: 63px;
+    color: #30a6f5;
+    margin-left:12px;
+}
+.lable{
+	font-size: 24px;
+    font-weight: bold;
+    color: #30a6f5;
+    line-height: 2;
+    width: 200px;
+   	margin:2px;
     
-    
+}
+.btn-primary:hover{
+	    color: #fff;
+    background-color: #0987db;
+    border-color: #0987db;
+}
+.btn-primary{
+   width: 200px;
+   height: 46px;
+    font-size: 26px;
+    line-height: 1.6;
+    margin: 50px 0 20px 0;
+        -webkit-appearance: button;
+    cursor: pointer;
+    color: #fff;
+    background-color: #1ea0fa;
+    border-color: #1ea0fa;
+    display: inline-block;
+    padding: 0 10px;
+    font-weight: normal;
+        text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+        user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
 }

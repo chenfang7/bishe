@@ -61,7 +61,7 @@ public class UserController {
 	 * @throws Exception 
 	 */
 	@RequestMapping(value="register",method=RequestMethod.POST)
-	public ModelAndView addUser(User user) throws Exception{
+	public ModelAndView addUser(User user,HttpServletRequest request) throws Exception{
 		ModelAndView mav = new ModelAndView();
 		//生成激活码，32位uuid
 		String code = UUID.randomUUID().toString().replace("-", "");
@@ -77,7 +77,7 @@ public class UserController {
 		Integer result = userService.addUser(user) == null?0:1;
 		if(result == 1){
 			//发送激活邮件
-			SendMail.send(user.getEmail(),user.getEmail(), code);
+			SendMail.send(user.getEmail(),user.getEmail(), code,request);
 			mav.addObject("result", 1);
 			mav.setViewName("registerresult");
 			return mav;
@@ -114,7 +114,7 @@ public class UserController {
 	 * 登录校验
 	 * @author zp
 	 * @param uname & email,password
-	 * @return 0：登陆成功
+	 * @return  0：登陆成功
 	 * 			1：未激活
 	 * 			2：用户名或密码错误
 	 */
