@@ -2609,7 +2609,7 @@ fieldset{border:0;}
         </div>
         <div class="shopcart" id="shopcart" style="display:none;"></div>
         <div id="submit_div" style="padding-top: 6px;clear:both; padding-bottom:10px;">
-            <div style="background:#ffffff" align="center">
+            <div id="tj" style="background:#ffffff" align="center">
                 <a href="javascript:void(0)" class="sumitbutton" style="padding:0 300px; height:60px; line-height:60px; margin:5px auto 50px;font-size:20px" onclick="submit()">提交问卷</a>
             </div>
          <div style="clear:both;"></div>
@@ -2624,6 +2624,39 @@ fieldset{border:0;}
 
    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
+    /**
+     * 
+     * 获取当前时间
+     */
+    function p(s) {
+        return s < 10 ? '0' + s: s;
+    }
+
+    var myDate = new Date();
+    //获取当前年
+    var year=myDate.getFullYear();
+    //获取当前月
+    var month=myDate.getMonth()+1;
+    //获取当前日
+    var date=myDate.getDate(); 
+
+    var now=new Date(Date.parse(year+'-'+p(month)+"-"+p(date)));
+    
+    var startDate = new Date(Date.parse("${qqq.qstartdate}"));
+    
+    var endDate = new Date(Date.parse("${qqq.qenddate}"));
+    
+    console.log("${qqq.qstartdate}");
+    console.log(startDate);
+    if(now<startDate){
+    	alert("该问卷还未开始");
+    	$("#tj").css("display","none");
+    }else if(now>endDate){
+    	alert("该问卷还已结束");
+    	$("#tj").css("display","none");
+    }
+
+    
         //用于生成uuid
     function S4() {
         return (((1+Math.random())*0x10000)|0).toString(16).substring(1);

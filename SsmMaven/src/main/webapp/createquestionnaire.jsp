@@ -24,6 +24,8 @@
 		<div style="margin:0 auto;width:700px;text-align:center;padding-top:100px;">
 			<lable class="lable">调查名称：</lable>
 			<input type="text" name="wd" id="text1" class="form-control" onfocus="if(value=='请输入新建的问卷名...'){value='';}" onblur="if(value==''){value='请输入新建的问卷名...'}" value="请输入新建的问卷名..." onkeypress="return searchQ(event);">
+			<lable class="lable">调查起始日期：</lable>
+			<input type="text" name="wd" id="startDate"> - <input type="text" name="wd" id="endDate">
 			<button class="btn-primary" onclick='gocreate()'>创建问卷</button>
 		</div>
 	 </div>
@@ -33,7 +35,7 @@
 </body>
 <script type="text/javascript">
 	function gocreate() {
-	window.location.href='create?name='+$("#text1").val()
+	window.location.href='create?name='+$("#text1").val()+"&startDate="+$("#startDate").val()+"&endDate="+$("#endDate").val()
 	}
 </script>
 </html>

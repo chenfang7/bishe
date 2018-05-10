@@ -65,8 +65,8 @@
 
 	<insert id="createquestionnaire" useGeneratedKeys="true"
 		keyProperty="qid">
-		INSERT INTO `questionnaire` ( `qname`, `quid`)
-		VALUES ( #{qname}, #{quid});
+		INSERT INTO `questionnaire` ( `qname`, `quid`,`qstartDate`,`qendDate`)
+		VALUES ( #{qname}, #{quid},#{qstartdate},#{qenddate});
 	</insert>
 
 	<update id="updatequestionnaire" parameterType="com.imut.model.Questionnaire">

@@ -1,5 +1,8 @@
 package com.imut.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -118,12 +121,16 @@ public class MyQuestionnaireController {
 	 * @param name
 	 * @param request
 	 * @return
+	 * @throws ParseException 
 	 */
 	@RequestMapping(value = "/create")
-	public ModelAndView createquestionnaire(String name, HttpServletRequest request) {
+	public ModelAndView createquestionnaire(String name, String startDate,String endDate,HttpServletRequest request) throws ParseException {
 		User user = (User) request.getSession().getAttribute("user");
 		Questionnaire q =new Questionnaire();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		q.setQname(name);
+		q.setQstartdate(sdf.parse(startDate));
+		q.setQenddate(sdf.parse(endDate));
 		q.setQuid(user.getUid());
 		int createquestionnaire = mqs.createquestionnaire(q);
 		ModelAndView mav = new ModelAndView();
@@ -179,6 +186,15 @@ public class MyQuestionnaireController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("qqq",questionnaire);
 		mav.setViewName("questionnaire");
+		return mav;
+	}
+	//questionnaire
+	@RequestMapping(value = "/questionlook")
+	public ModelAndView questionlook(String qid){
+		Questionnaire questionnaire=mqs.editquestionnaire(qid);
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("qqq",questionnaire);
+		mav.setViewName("questionlook");
 		return mav;
 	}
 	//提交问卷

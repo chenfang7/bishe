@@ -201,6 +201,13 @@ function searchwd(){
 														
 													</dd>
 												</dl>
+												<dl class='process-3 pull-left'>
+													<dd class='spinner-list'>
+														<a href='questionlook?qid=${q.qid}' title='预览问卷'><i
+															class='icon download-icon'></i>预览问卷</a>
+														
+													</dd>
+												</dl>
 											</div>
 											<div class='operation-box pull-right'>
 												<a href='javascript:void(0);'
