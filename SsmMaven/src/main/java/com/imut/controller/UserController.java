@@ -128,13 +128,13 @@ public class UserController {
 			user.setUname(name);
 		}
 		User userInf = userService.getUserByNameOrEmail(user);
-		System.out.println(userInf.toString());
 		if(userInf != null){
 			if(userInf.getStatus() == 0){
 				return 1;
 			}else{
 
 				if(userInf.getUpassword().equals(AppMD5Util.getMD5(password))){
+					System.out.println(userInf);
 					request.getSession().setAttribute("user", userInf);
 					return 0;
 				}else{

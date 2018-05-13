@@ -51,7 +51,7 @@
 	</select>
 	<!-- 复制问题 -->
 	<insert id="copyQuestion" parameterType="java.util.List">
-		insert into question
+		insert ignore  into question
 		(qid, tname, type, `option`) values
 		<foreach collection="list" item="question" separator=",">
 			(

@@ -23,7 +23,7 @@
 		<div style="margin:0 auto;width:700px;text-align:center;padding-top:100px;">
 			<div>
 				<lable class="lable">调查名称：</lable>
-				<input type="text" name="wd" id="text1" class=" form-control" onfocus="if(value=='请输入新建的问卷名...'){value='';}" onblur="if(value==''){value='请输入新建的问卷名...'}" value="请输入新建的问卷名..." onkeypress="return searchQ(event);">
+				<input type="text" name="wd" id="text1" class=" form-control" onfocus="if(value=='请输入新建的问卷名...'){value='';}" onblur="if(value==''){value='请输入新建的问卷名...'}" value="请输入新建的问卷名..." >
 			</div>
 			<div style="margin:40px auto; width:700px;text-align:center;position: relative;
     right: 62px;">
@@ -39,7 +39,7 @@
 </body>
 <script type="text/javascript">
 	function gocreate() {
-	window.location.href='create?name='+$("#text1").val()+"&startDate="+$("#startDate").val()+"&endDate="+$("#endDate").val()
+	window.location.href='create?name='+$("#text1").val()+"&startDate="+$("#test29").val()+"&endDate="+$("#test30").val()
 	}
 	 lay('#version').html('-v'+ laydate.v);
 	    laydate.render({

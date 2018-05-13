@@ -48,9 +48,10 @@ public class MyQuestionnaireController {
 		ModelAndView mav = new ModelAndView();
 		if (userAndQlist != null) {
 			mav.addObject("qlist", userAndQlist.getQlist());
-			mav.addObject("qu", userAndQlist);
+			mav.addObject("qu", user);
 		} else {
 			mav.addObject("qlist", null);
+			mav.addObject("qu", user);
 		}
 
 		mav.setViewName("myquestionnairelist");
