@@ -73,7 +73,7 @@ function searchwd(){
 
 
 					<dl id="ctl01_hrefWjxout" class="user-info pull-left IE-8">
-						<a class="user-name" href="/loginout.aspx">
+						<a class="user-name" href="user/logout">
 							<dt class="icon out-icon"></dt>
 							<dd class="spinner-list">
 								<span>退出</span>

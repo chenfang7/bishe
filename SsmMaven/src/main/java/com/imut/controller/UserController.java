@@ -145,4 +145,10 @@ public class UserController {
 			return 2;
 		}
 	}
+	@RequestMapping(value="logout")
+	public String logout(HttpServletRequest request){
+		request.getSession().invalidate();
+		return "redirect:/index.html";
+		
+	}
 }
