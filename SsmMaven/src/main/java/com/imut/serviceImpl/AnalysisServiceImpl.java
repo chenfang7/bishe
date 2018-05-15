@@ -99,7 +99,7 @@ public class AnalysisServiceImpl implements AnalysisService {
 		Connection con = Jsoup.connect("http://127.0.0.1:8080/SsmMaven/goanalysis?qid="+qid);
 		Document document = con.get();
 		document.select("[href=css/amazeui.min.css]").remove();
-		document.select("[href=/css/buttons.css]").remove();
+		document.select("[href=css/buttons.css]").remove();
 
 		InputStream is = new ByteArrayInputStream(document.html().getBytes("UTF-8"));
 		OutputStream os = new FileOutputStream("d:\\"+qid+".doc");  

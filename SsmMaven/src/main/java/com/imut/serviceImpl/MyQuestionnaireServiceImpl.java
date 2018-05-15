@@ -1,8 +1,17 @@
 package com.imut.serviceImpl;
 
+import java.io.ByteArrayInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Random;
 
+import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -100,6 +109,23 @@ public class MyQuestionnaireServiceImpl implements MyQuestionnaireService {
 	public void addanswers(List<Answers> list) {
 		questionnaireMapper.addanswers(list);
 		questionnaireMapper.updatesum(list.get(0).getQid()+"");
+	}
+
+	@Override
+	public void download(String qid) throws IOException {
+		Connection con = Jsoup.connect("http://127.0.0.1:8080/SsmMaven/questionlook?qid="+qid);
+		Document document = con.get();
+		
+
+		InputStream is = new ByteArrayInputStream(document.html().getBytes("UTF-8"));
+		OutputStream os = new FileOutputStream("d:\\"+qid+"原始问卷问卷.doc");  
+		POIFSFileSystem fs = new POIFSFileSystem();  
+	    //对应于org.apache.poi.hdf.extractor.WordDocument  
+	    fs.createDocument(is, "WordDocument");  
+	    fs.writeFilesystem(os);  
+	    os.close();  
+	    is.close();  
+		
 	}
 
 

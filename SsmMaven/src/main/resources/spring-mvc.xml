@@ -43,6 +43,8 @@
 	        <mvc:mapping path="/**"/> 
 	        <mvc:exclude-mapping path="/**/*.css"/>
 	        <mvc:exclude-mapping path="/active"/>
+	        <mvc:exclude-mapping path="/goanalysis"/>
+	        <mvc:exclude-mapping path="/questionlook"/>
 	        <mvc:exclude-mapping path="/questionnaire"/>
 	        <mvc:exclude-mapping path="/addanswers"/>
 	        <mvc:exclude-mapping path="/**/*.js"/>

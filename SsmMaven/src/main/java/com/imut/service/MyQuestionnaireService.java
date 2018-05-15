@@ -1,5 +1,6 @@
 package com.imut.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.imut.model.Answers;
@@ -28,6 +29,8 @@ public interface MyQuestionnaireService {
 	public Questionnaire editquestionnaire(String qid);
 
 	public void addanswers(List<Answers> list);
+
+	public void download(String qid) throws IOException ;
 
 
 }

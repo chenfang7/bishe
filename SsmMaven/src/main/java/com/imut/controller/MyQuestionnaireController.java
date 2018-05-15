@@ -1,5 +1,7 @@
 package com.imut.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,7 +13,12 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -209,4 +216,19 @@ public class MyQuestionnaireController {
 		message.put("code", "提交成功！");
 		return message;
 	}
+	
+	//downloadquestionnaire
+	@RequestMapping(value = "/downloadquestionnaire")
+	@ResponseBody
+	public ResponseEntity<byte[]> download(String qid) throws IOException {    
+		
+		mqs.download(qid);
+		String path = "d:\\" + qid + "原始问卷问卷.doc";
+		File file = new File(path);
+		HttpHeaders headers = new HttpHeaders();
+		String fileName = new String("原始问卷.doc".getBytes("UTF-8"), "iso-8859-1");// 为了解决中文名称乱码问题
+		headers.setContentDispositionFormData("attachment", fileName);
+		headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+		return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file), headers, HttpStatus.CREATED);
+    }
 }

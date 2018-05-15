@@ -210,10 +210,10 @@ function searchwd(){
 												</dl>
 											</div>
 											<div class='operation-box pull-right'>
-												<a href='javascript:void(0);'
+												<a 
 													class='pull-left release-items' title='此问卷状态是草稿，点击发布问卷'
-													onclick='return statusChange(21275213,"",-1);'><i
-													class='icon release-icon'></i>发布</a><a
+													href='downloadquestionnaire?qid=${q.qid}'><i
+													class='icon release-icon'></i>下载问卷</a><a
 													href='javascript:void(0)'
 													onclick='return copyClick(${q.qid});'
 													class='pull-left copy-items'><i class='icon copy-icon'></i>复制</a><a
