@@ -210,17 +210,16 @@ function searchwd(){
 												</dl>
 											</div>
 											<div class='operation-box pull-right'>
-												<a 
-													class='pull-left release-items' title='此问卷状态是草稿，点击发布问卷'
-													href='downloadquestionnaire?qid=${q.qid}'><i
-													class='icon release-icon'></i>下载问卷</a><a
-													href='javascript:void(0)'
-													onclick='return copyClick(${q.qid});'
-													class='pull-left copy-items'><i class='icon copy-icon'></i>复制</a><a
-													href='javascript:void(0)' class='pull-left cutout-items'
-													title='删除此问卷' onclick='deleteClick(${q.qid});'><i
-													class='icon cutout-icon'></i>删除 </a> 
-											</div>
+													<a class='pull-left release-items' 
+														href='downloadquestionnaire?qid=${q.qid}'><i
+														class='icon release-icon'></i>下载问卷</a><a
+														href='javascript:void(0)'
+														onclick='return copyClick(${q.qid});'
+														class='pull-left copy-items'><i class='icon copy-icon'></i>复制</a><a
+														href='javascript:void(0)' class='pull-left cutout-items'
+														title='删除此问卷' onclick='deleteClick(${q.qid});'><i
+														class='icon cutout-icon'></i>删除 </a>
+												</div>
 										</dd>
 									</dl>
 								</c:forEach>
