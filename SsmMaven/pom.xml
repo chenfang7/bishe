@@ -200,7 +200,7 @@
 					<port>8080</port>
 					<path>/SsmMaven</path>
 					
-					 <url>http://127.0.0.1:8080/manager/text</url>
+					 <url>http://123.207.155.110:80/manager/text</url>
                 <!-- <username>admin</username>
                 <password>admin</password>
                 <update>true</update>  -->

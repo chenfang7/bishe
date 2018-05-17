@@ -56,8 +56,13 @@
 	        <mvc:exclude-mapping path="/fonts/**" /> 
 	        <bean class="com.imut.interceptor.LoginInterceptor"></bean>  
 	    </mvc:interceptor>  
+	    
+
 	</mvc:interceptors>  
 
+
+	
+	
 
 
 	<!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
